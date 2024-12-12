@@ -26,12 +26,6 @@ module.exports = {
   },
 
   plugins: [
-    // Add ProvidePlugin to make jQuery globally available
-    new webpack.ProvidePlugin({
-      $: 'jquery',
-      jQuery: 'jquery',
-      'window.jQuery': 'jquery'
-    }),
 
     new HtmlBundlerPlugin({
       // verbose: 'auto', // output information about the process to console in development mode only
@@ -59,6 +53,12 @@ module.exports = {
 
       // supports template engines: eta, ejs, handlebars, nunjucks, twig
       preprocessor: 'nunjucks', // use the Nunjucks template engine
+    }),
+    // Add ProvidePlugin to make jQuery globally available
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
     }),
   ],
 

@@ -1,14 +1,24 @@
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.green.css';
 import 'owl.carousel';
 
+jQuery.noConflict()(function ($) {
+  $(document).ready(function(){
 
-$(document).ready(function(){
-    $('.owl-carousel').owlCarousel({
+    $('#servidores .owl-carousel').owlCarousel({
       center: false,
       loop:false,
-      autoWidth:false,
       items:2,
       margin:30,
     });
+
+    $('#dados-do-concurso .owl-carousel').owlCarousel({
+      center: true,
+      loop:false,
+      items:1,
+      margin:30,
+      nav: true,
+      dots: false
+
+    });
+  });
 });
+
