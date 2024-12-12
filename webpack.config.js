@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlBundlerPlugin = require('html-bundler-webpack-plugin');
+const webpack = require('webpack'); // Import webpack for ProvidePlugin
 
 const isProd = !process.argv.find((str) => str.includes('development'));
 
@@ -25,6 +26,7 @@ module.exports = {
   },
 
   plugins: [
+
     new HtmlBundlerPlugin({
       // verbose: 'auto', // output information about the process to console in development mode only
 
@@ -51,6 +53,12 @@ module.exports = {
 
       // supports template engines: eta, ejs, handlebars, nunjucks, twig
       preprocessor: 'nunjucks', // use the Nunjucks template engine
+    }),
+    // Add ProvidePlugin to make jQuery globally available
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
     }),
   ],
 
