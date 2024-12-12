@@ -1,0 +1,164 @@
+
+body {
+  position: relative;
+
+  .align-wrapper {
+    width: 1280px;
+    margin: 0 auto;
+    padding: 0 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+  }
+
+  header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px 0;
+    background: #333380;
+
+    h1 {
+      display: block;
+      margin: 0 auto;
+      width: 407px;
+      height: 89px;
+
+      a {
+        width: 100%;
+        height: 100%;
+        display: block;
+        background: url("@images/app-logo.png") no-repeat center top;
+        background-size: cover;
+        color: transparent;
+        font-size: 0;
+      }
+    }
+  }
+
+  #menu {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    background: rgba(255, 255, 255, .95);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+
+    > * {
+      flex: 1;
+    }
+
+    ul {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      flex: 1;
+
+      li {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        justify-content: center;
+        margin-left: 30px;
+
+        &:first-child {
+          margin-left: 0;
+        }
+
+        a {
+          padding: 0 10px;
+          width: 100%;
+          height: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: #333380;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  main {
+    .main-content {
+
+      > section {
+        min-height: 72dvh;
+        display: flex;
+        flex-direction: column;
+
+        .align-wrapper {
+          padding: 50px !important;
+        }
+      }
+    }
+  }
+
+  footer {
+    display: block;
+    background: #7f2a7e;
+    width: 100%;
+
+    .align-wrapper {
+      padding: 50px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      //gap: 50px;
+
+      .row {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex: 1;
+        //gap: 50px;
+        justify-content: space-between;
+
+        .column {
+          width: fit-content;
+          min-width: 42%;
+          display: flex;
+          flex-direction: column;
+          //align-items: center;
+          //justify-content: center;
+          position: relative;
+
+
+          .text {
+            color: #FFF;
+
+            h3 {
+              font-size: 18px;
+              display: block;
+              margin: 0;
+            }
+
+            p {
+              display: block;
+              font-size: 16px;
+              margin-top: 30px;
+
+              strong,
+              span {
+                display: block;
+              }
+            }
+          }
+
+        }
+      }
+
+    }
+  }
+}
+

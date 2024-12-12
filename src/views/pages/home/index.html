@@ -1,0 +1,263 @@
+{% extends "src/views/layouts/default.html" %}
+
+<!-- set variables used in layout -->
+{% set title="Home" %}
+
+{% block styles %}
+<!-- load specific page style -->
+<link href="./style.scss" rel="stylesheet">
+{% endblock %}
+
+{% block scripts %}
+<!-- load specific page script -->
+<script src="./home.js"></script>
+{% endblock %}
+
+{% block content %}
+<section id="inicio" style="">
+  <div class="video-preview">
+    <iframe  src="https://www.youtube.com/embed/rxF9tv41smQ?si=y63rybW-FHN_nGdz&amp;controls=0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section id="fazemos-diferenca">
+  <div class="align-wrapper">
+    <div class="row">
+      <div class="column">
+        <h2 class="image">Nós fazemos a diferença, o mpf faz história.</h2>
+      </div>
+
+      <div class="column">
+        <div>
+          <p>
+            <strong><i>Esta exposição</i></strong> é um convite a viajar<br/>
+            no tempo. Escutar histórias. Conhecer<br/>
+            e reconhecer alguns daqueles que, há 30 anos,<br/>
+            iniciavam uma jornada de fortalecimento<br/>
+            do Ministério Público Federal (MPF).
+          </p>
+
+          <p>
+            Ao navegar pelos dados e fatos do primeiro<br/>
+            concurso de servidores do Ministério Público<br/>
+            da União (MPU) esperamos que você seja<br/>
+            envolvido por essas três décadas de muita<br/>
+            transformação e evolução.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="novo-tempo">
+  <div class="align-wrapper">
+    <div class="text">
+      <h2>UM NOVO TEMPO PARA O MPU</h2>
+      <p>Os secretários-gerais de 30 anos e de hoje falam sobre sua relação<br/>com a institução e seu impacto para a sociedade.</p>
+    </div>
+
+    <div class="row">
+      <div class="column">
+        <div class="card">
+          <div class="membro">
+            <div class="avatar">
+              <img src="@images/avatar-1.png" />
+            </div>
+
+            <div class="dados">
+              <strong>João Batista de Almeida</strong>
+              <span>Secretário-geral do MPU<br/> de 1993 a 2000</span>
+            </div>
+          </div>
+
+          <div class="info">
+            <p>Membro do MPF desde 1984, João Batista foi o primeiro procurador da República a exercer o cargo de secretário-geral do MPU. Durante a sua gestão, foi realizado o primeiro concurso público de servidores do Ministério Público da União.</p>
+          </div>
+        </div>
+      </div>
+      <div class="column">
+        <div class="card">
+          <div class="membro">
+            <div class="avatar">
+              <img src="@images/avatar-1.png" />
+            </div>
+
+            <div class="dados">
+              <strong>João Batista de Almeida</strong>
+              <span>Secretário-geral do MPU<br/> de 1993 a 2000</span>
+            </div>
+          </div>
+
+          <div class="info">
+            <p>Membro do MPF desde 1984, João Batista foi o primeiro procurador da República a exercer o cargo de secretário-geral do MPU. Durante a sua gestão, foi realizado o primeiro concurso público de servidores do Ministério Público da União.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="constituicao-federal">
+  <div class="align-wrapper">
+    <div class="text">
+      <p><strong><i>A Constituição Federal de 1988</i></strong> estabeleceu um novo perfil institucional do<br/> MPU: defensor dos direitos da sociedade.</p>
+      <p>A autonomia funcional, administrativa, orçamentária e financeira<br/>o desvinculou dos Poderes Judiciário e Executivo.</p>
+      <p>O primeiro concurso para a formação do quadro permanente<br/> de servidores representou um marco dessa autonomia.</p>
+    </div>
+  </div>
+</section>
+
+<section id="linha-do-tempo">
+  <div class="align-wrapper">
+    <div class="text">
+      <h2>LINHA DO TEMPO - CONCURSO 1993</h2>
+    </div>
+
+    <ul class="slides">
+      <li>
+        <div class="preview">
+          <a href="#this"><img src="@images/document.png" /></a>
+        </div>
+
+        <span class="data">22/04/93</span>
+
+        <span class="bullet"></span>
+
+        <div class="etapa">
+          <strong>1</strong>
+          <span>Publicação<br/> do Edital</span>
+        </div>
+      </li>
+
+      <li>
+        <div class="preview">
+          <a href="#this"><img src="@images/document.png" /></a>
+        </div>
+
+        <span class="data">08/08/93</span>
+
+        <span class="bullet"></span>
+
+        <div class="etapa">
+          <strong>2</strong>
+          <span>Aplicação<br/> da prova para<br/> Auxiliar<br/> Administrativo</span>
+        </div>
+      </li>
+
+      <li>
+        <div class="preview">
+          <a href="#this"><img src="@images/document.png" /></a>
+        </div>
+
+        <span class="data">05/09/93</span>
+
+        <span class="bullet"></span>
+
+        <div class="etapa">
+          <strong>3</strong>
+          <span>Aplicação<br/> da prova para<br/> Assistente<br/> e Técnico<br/> Administrativo</span>
+        </div>
+      </li>
+
+      <li>
+        <div class="preview">
+          <a href="#this"><img src="@images/document.png" /></a>
+        </div>
+
+        <span class="data">15/12/93</span>
+
+        <span class="bullet"></span>
+
+        <div class="etapa">
+          <strong>4</strong>
+          <span>Homologação<br/> do resultado<br/> ﬁnal do cargo<br/> de Auxiliar Técnico</span>
+        </div>
+      </li>
+
+      <li>
+        <div class="preview">
+          <a href="#this"><img src="@images/document.png" /></a>
+        </div>
+
+        <span class="data">20/12/93</span>
+
+        <span class="bullet"></span>
+
+        <div class="etapa">
+          <strong>5</strong>
+          <span>Homologação<br/> do resultado ﬁnal<br/> dos cargos<br/> de Técntico<br/> e Assistente</span>
+        </div>
+      </li>
+
+      <li>
+        <div class="preview">
+          <a href="#this"><img src="@images/document.png" /></a>
+        </div>
+
+        <span class="data">30/01/94</span>
+
+        <span class="bullet"></span>
+
+        <div class="etapa">
+          <strong>6</strong>
+          <span>Primeira<br/> nomeação<br/> de 285<br/> servidores</span>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section id="dados-do-concurso">
+  <div class="align-wrapper">
+    <div class="text">
+      <h2>DO PASSADO AO FUTURO</h2>
+      <p>Os servidores pioneiros do MPF representam um patrimônio vivo da Instituição,<br/> servindo como base sólida para o futuro. Há 30 anos, eles embarcaram em um caminho <br/> de desafios e conquistas para a construção da Justiça no Brasil. <br/> Hoje contamos com mais de 700 servidores do primeiro concurso ainda ativos e convidamos alguns<br/> deles a compartilhar um pouco de suas experiências e histórias.</p>
+    </div>
+
+    <ul class="slides">
+      <li class="card">
+        <div class="dados">
+          <div class="text">
+            <strong>Cila de Castro Silva</strong>
+            <p>Cila iniciou sua carreira<br/> no Ministério Público do Trabalho. <br/>Em 2006, inicia sua trajetória <br/>na área de Gestão de Pessoas <br/>do Ministério Público Federal. <br/>A sua atuação na área que cuida <br/>de férias e frequência permite <br/>que ela tenha a oportunidade <br/>de ter contato com o público interno<br/> em todo o país: “Sinto que posso<br/> ajudar as pessoas”.</p>
+          </div>
+
+          <div class="avatar">
+            <img src="@images/avatar-1.png" />
+          </div>
+        </div>
+        <button type="button">Assistir ao vídeo</button>
+      </li>
+      <li class="card">
+        <div class="dados">
+          <div class="text">
+            <strong>Cila de Castro Silva</strong>
+            <p>Cila iniciou sua carreira<br/> no Ministério Público do Trabalho. <br/>Em 2006, inicia sua trajetória <br/>na área de Gestão de Pessoas <br/>do Ministério Público Federal. <br/>A sua atuação na área que cuida <br/>de férias e frequência permite <br/>que ela tenha a oportunidade <br/>de ter contato com o público interno<br/> em todo o país: “Sinto que posso<br/> ajudar as pessoas”.</p>
+          </div>
+
+          <div class="avatar">
+            <img src="@images/avatar-1.png" />
+          </div>
+        </div>
+        <button type="button">Assistir ao vídeo</button>
+      </li>
+      <li class="card">
+        <div class="dados">
+          <div class="text">
+            <strong>Cila de Castro Silva</strong>
+            <p>Cila iniciou sua carreira<br/> no Ministério Público do Trabalho. <br/>Em 2006, inicia sua trajetória <br/>na área de Gestão de Pessoas <br/>do Ministério Público Federal. <br/>A sua atuação na área que cuida <br/>de férias e frequência permite <br/>que ela tenha a oportunidade <br/>de ter contato com o público interno<br/> em todo o país: “Sinto que posso<br/> ajudar as pessoas”.</p>
+          </div>
+
+          <div class="avatar">
+            <img src="@images/avatar-1.png" />
+          </div>
+        </div>
+        <button type="button">Assistir ao vídeo</button>
+      </li>
+    </ul>
+  </div>
+</section>
+{% endblock %}

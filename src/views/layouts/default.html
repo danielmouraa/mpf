@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>{{ title }}</title>
+
+  <!-- load source favicon via Webpack alias '@images' -->
+  <link href="@images/favicon.png" rel="icon" type="image/png">
+
+  <!-- load global source script via Webpack alias '@scripts' -->
+  <script src="@scripts/common.js" defer="defer"></script>
+
+  <meta name="viewport" content="width=1280, initial-scale=1">
+  <!-- block for specific page styles -->
+  {% block styles %}{% endblock %}
+</head>
+<body>
+  <!-- Header -->
+  {% include "src/views/partials/header.html" %}
+
+  <!-- Main content -->
+  <main class="main-container">
+    {% include "src/views/partials/navigation.html" %}
+
+    <div class="main-content">
+
+      <!-- block for specific page content -->
+      {% block content %}{% endblock %}
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  {% include "src/views/partials/footer.html" %}
+
+  <!-- block for specific page scripts -->
+  {% block scripts %}{% endblock %}
+</body>
+</html>
