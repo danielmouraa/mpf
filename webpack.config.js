@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlBundlerPlugin = require('html-bundler-webpack-plugin');
+const webpack = require('webpack'); // Import webpack for ProvidePlugin
 
 const isProd = !process.argv.find((str) => str.includes('development'));
 
@@ -25,6 +26,13 @@ module.exports = {
   },
 
   plugins: [
+    // Add ProvidePlugin to make jQuery globally available
+    new webpack.ProvidePlugin({
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery'
+    }),
+
     new HtmlBundlerPlugin({
       // verbose: 'auto', // output information about the process to console in development mode only
 
