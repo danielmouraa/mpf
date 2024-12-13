@@ -1244,4 +1244,141 @@
       float: right;
     }
   }
+
+
+
+  .quiz-container {
+    background: #FFF;
+    border-radius: 20px;
+    width: 100%;
+    color: #333;
+    border: 1px solid #333380;
+    overflow: hidden;
+
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+    #quiz {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+    }
+
+    #question {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      color: #fff;
+
+      .resultado {
+        flex: 1;
+        text-align: center;
+        color: #000;
+      }
+
+      .index {
+        font-size: 40px;
+        padding: 20px 30px;
+        background: #333380;
+        font-weight: bold;
+      }
+
+      div {
+        align-self: stretch;
+        flex: 1;
+        display: flex;
+        align-items: center;
+        background: #7d2b8a;
+        padding: 0 25px;
+      }
+
+      .enunciado {
+        font-size: 20px;
+        flex: 1;
+        font-weight: bold;
+      }
+    }
+  }
+
+  #options {
+    padding: 20px;
+  }
+
+  #options button {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    color: #FFF;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+    text-align: left;
+    background: #333380;
+  }
+
+  #options button.correct {
+    background-color: #076700;
+    color: #fff;
+  }
+
+  #options button.wrong {
+    background-color: #af2222;
+    color: #fff;
+  }
+
+  /* Button Styles */
+  button {
+    transition: all ease-in-out .2s;
+    font-size: 1rem;
+    padding: 10px 20px;
+    background-color: #333380;
+    color: #fff;
+    border-radius: 20px;
+    border: 1px solid #333380;
+    cursor: pointer;
+  }
+
+  button:hover {
+    opacity: .8;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 20px 20px;
+
+    > div {
+      min-width: 110px;
+    }
+
+    button {
+      font-weight: bold;
+
+      &.outline {
+        background: #FFF;
+        color: #333380;
+      }
+    }
+  }
+
+  .devolutiva {
+    color: #333380;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    display: block;
+    flex: 1;
+  }
+
+
 }
