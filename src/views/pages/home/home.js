@@ -129,19 +129,19 @@ $(document).ready(function() {
         },
         {
           "question": "Uma leitura errada do texto levaria a afirmar que:",
-          "correct_answer": "O discurso publicitário é formulado com mensagens que se sustentam no princípio do prazer.",
+          "correct_answer": "A felicidade prometida nas propagandas dá ao homem a consciência de sua finitude.",
           "incorrect_answers": [
             "Interpretar literalmente o discurso publicitário é uma atitude ingênua.",
             "A publicidade elabora um cenário onírico para os objetos da sociedade industrial.",
-            "A felicidade prometida nas propagandas dá ao homem a consciência de sua finitude.",
+            "O discurso publicitário é formulado com mensagens que se sustentam no princípio do prazer.",
             "Está incorporado à publicidade o componente mítico de retorno ao paraíso."
           ]
         },
         {
           "question": "Assinale a letra que contém enunciado falso.",
-          "correct_answer": "O termo \"(ritualiza-se)\" especifica o sentido de \"representa-se\" (l.20).",
+          "correct_answer": "Colocadas em seqüência, as expressões \"a se ressalvar\" e \"a se ressaltar\" (l.1O) são equivalentes quanto ao sentido.",
           "incorrect_answers": [
-            "Colocadas em seqüência, as expressões \"a se ressalvar\" e \"a se ressaltar\" (l.1O) são equivalentes quanto ao sentido.",
+            "O termo \"(ritualiza-se)\" especifica o sentido de \"representa-se\" (l.20).",
             "O segmento \"- da consciência da finitude -\" explica a expressão \"lacuna primordial\" (l.16).<",
             "As expressões \"deleite sublime\", \"estado nirvânico\", \"gozo celestial\" (ls.8 e 9), colocadas em seqüência, reiteram a mesma idéia.",
             "Em \"A sua eficiência\" (l.5), o possessivo refere-se à eficiência da publicidade."
@@ -161,12 +161,12 @@ $(document).ready(function() {
         },
         {
           "question": "É objetivo da República Federativa do Brasil, dentre outros:",
-          "correct_answer": "prevalência dos direitos humanos",
+          "correct_answer": "erradicar a pobreza e a marginalização e reduzir as desigualdades sociais e regionais",
           "incorrect_answers": [
             "solução pacífica dos conflitos",
             "autodeterminação dos povos",
             "cidadania",
-            "erradicar a pobreza e a marginalização e reduzir as desigualdades sociais e regionais"
+            "prevalência dos direitos humanos"
           ]
         },
         {
@@ -181,39 +181,39 @@ $(document).ready(function() {
         },
         {
           "question": "São princípios institucionais do Ministério Público:",
-          "correct_answer": "unidade, autonomia administrativa e financeira e indivisibilidade",
+          "correct_answer": "unidade, indivisibilidade e independência funcional",
           "incorrect_answers": [
             "unidade, hierarquia, indivisibilidade e independência funcional",
-            "unidade, indivisibilidade e independência funcional",
+            "unidade, autonomia administrativa e financeira e indivisibilidade",
             "autonomia funcional, autonomia administrativa e autonomia financeira",
             "unidade, indivisibilidade e hierarquia"
           ]
         },
         {
           "question": "A destituição do Procurador-Geral da República depende:",
-          "correct_answer": "da iniciativa do Senado Federal.",
+          "correct_answer": "da iniciativa do Presidente da República, precedida de autorização da maioria absoluta do Senado Federal.",
           "incorrect_answers": [
             "da iniciativa exclusiva do Presidente da República.",
             "da iniciativa do Congresso Nacional.",
-            "da iniciativa do Presidente da República, precedida de autorização da maioria absoluta do Senado Federal.",
+            "da iniciativa do Senado Federal.",
             "de iniciativa dos membros do Ministério Público."
           ]
         },
         {
           "question": "A respeito do servidor concursado do Ministério Público da União, é correto dizer que:",
-          "correct_answer": "é demissível ad nutum enquanto não completa dois anos de efetivo exercício.",
+          "correct_answer": "não pode aposentar-se voluntariamente, enquanto pendente processo administrativo disciplinar contra ele.",
           "incorrect_answers": [
             "adquire vitaliciedade após dois anos de efetivo exercício.",
-            "não pode aposentar-se voluntariamente, enquanto pendente processo administrativo disciplinar contra ele.",
+            "é demissível ad nutum enquanto não completa dois anos de efetivo exercício.",
             "somente pode ser posto em disponibilidade por força de processo administrativo disciplinar, em que se lhe assegure o direito de ampla defesa.",
             "somente pode ser demitido por força de sentença judicial transitada em julgado."
           ]
         },
         {
           "question": "Assinale a assertiva correta.",
-          "correct_answer": "A simples alegação de injustiça da penalidade pode constituir fundamento para a revisão.",
+          "correct_answer": "O processo disciplinar pode ser revisto, a qualquer tempo; ainda que já falecido o servidor punido.",
           "incorrect_answers": [
-            "O processo disciplinar pode ser revisto, a qualquer tempo; ainda que já falecido o servidor punido.",
+            "A simples alegação de injustiça da penalidade pode constituir fundamento para a revisão.",
             "O processo disciplinar pode ser revisto exclusivamente a pedido do servidor punido.",
             "Se a Comissão Revisora entender que a punição foi excessivamente branda, poderá propor o agravamento da penalidade inicialmente imposta.",
             "No processo revisionai, o ônus da prova cabe à Comissão Revisora."
@@ -312,6 +312,37 @@ $(document).ready(function() {
     restartButton.classList.add("hidden");
     nextButton.classList.add("hidden");
   });
+
+    $('.card').hover(function() {
+        $(this).find('.card-inner').css('transform', 'rotateY(180deg)');
+    }, function() {
+        $(this).find('.card-inner').css('transform', 'rotateY(0deg)');
+    });
+// modal
+ 
+      var modal = $('#myModal');
+      var span = $('.close');
+      var video = $('#video');
+  
+      $('.open-modal').click(function() {
+          var videoUrl = $(this).data('video');
+          video.attr('src', videoUrl);
+          modal.show();
+      });
+  
+      span.click(function() {
+          modal.hide();
+          video.attr('src', '');
+      });
+  
+      $(window).click(function(event) {
+          if (event.target == modal[0]) {
+              modal.hide();
+              video.attr('src', '');
+          }
+      });
+  
+    
 
 // Start the quiz when the page loads
   fetchQuestions();
