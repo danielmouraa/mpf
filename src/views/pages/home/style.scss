@@ -373,7 +373,6 @@
   .text {
     color: #f5f5f5;
     margin-bottom: 30px;
-
     h2 {
       font-size: 30px;
       font-weight: bolder;
@@ -389,12 +388,16 @@
       line-height: normal;
     }
   }
-
+ .dados .text{
+    width: 70%;
+  }
   .owl-carousel .owl-stage-outer,
   .owl-carousel .owl-stage {
     overflow: visible !important; /* Allow content to overflow */
   }
-
+  .owl-carousel{
+    margin-top: 20px;
+  }
   .card {
     background: #7d2b8a;
     padding: 50px;
@@ -424,7 +427,7 @@
       }
 
       .avatar {
-        width: 161px;
+        width: 30%;
         height: 200px;
 
         img {
@@ -1177,6 +1180,68 @@
     p {
       font-size: 18px;
       margin: 0;
+    }
+  }
+  .prova{
+    border: 1px solid #333380;
+    border-radius: 20px;
+  }
+  .questoes{
+      margin: 0;
+      padding: 0;
+      li{
+        list-style: none;
+      } 
+  }
+  .pergunta{
+    span{
+      background-color: #333380;
+      color: #ffffff;
+      padding: 10px 20px;
+      width: 10%;
+      float: left;
+      font-size: 40px;
+      font-weight: bold;
+      text-align: center;
+      -webkit-border-radius: 20px 0 0 0;
+      border-radius: 20px 0 0 0;
+    }
+    strong{
+      color: #ffffff;
+      background-color: #7d2b8a;
+      float: right;
+      width: 90%;
+      padding: 26px;
+      -webkit-border-radius: 0 20px 0 0 ;
+      border-radius: 0 20px 0 0;
+    }
+  }
+  .respostas{
+    padding: 30px;
+    clear: both;
+
+    ul{
+      margin: 0;
+      padding: 0;
+    }
+    li{
+      list-style: none;
+      margin-bottom: 20px;
+      clear: both;
+      background-color: #333380;
+      padding: 10px 20px 10px 30px;
+    }
+    li.erro{
+      background-color: #af2222;
+    }
+    li.certo{
+      background-color: #076700;
+    }
+    label{
+      color: #ffffff;
+    }
+    input{
+      float: right;
     }
   }
 }
