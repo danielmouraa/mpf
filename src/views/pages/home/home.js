@@ -1,6 +1,8 @@
 import 'owl.carousel';
 
 $(document).ready(function() {
+  let mouseEnterTimeout;
+
   $('#depoimentos .owl-carousel').owlCarousel({
     center: false,
     loop:false,
@@ -13,6 +15,7 @@ $(document).ready(function() {
     loop:false,
     items:1,
     margin:30,
+    // mouseDrag: false
   });
 
   // $('#questoes-da-prova .owl-carousel').owlCarousel({
@@ -23,71 +26,38 @@ $(document).ready(function() {
   // });
 
   $('#timeline-concursos .timeline li').click(function(){
-    var content = $(this).attr('data-content');
+    clearTimeout(mouseEnterTimeout); // Clear any existing timer
+    mouseEnterTimeout = setTimeout(() => {
+      var content = $(this).attr('data-content');
 
-    $(this).prevAll().addClass('active');
-    $(this).addClass('active');
-    $(this).nextAll().removeClass('active');
+      $(this).prevAll().addClass('active');
+      $(this).addClass('active');
+      $(this).nextAll().removeClass('active');
 
-    $('#timeline-concursos .conteudo .item:visible').each((i, $el) => {
-      $($el).fadeOut(() => {
-        $(content).fadeIn();
+      $('#timeline-concursos .conteudo .item:visible').each((i, $el) => {
+        $($el).fadeOut(200, () => {
+          $(content).fadeIn(200);
+        });
       });
-    });
-    $('#questoes-da-prova .owl-carousel').owlCarousel({
-      center: true,
-      loop:false,
-      items:1,
-      margin:30,
-      nav: true,
-      dots: false
-
-    });
-    $('.prova input').click(function(){
-      var _this = jQuery(this),
-          _parent = jQuery(this).parents('li').eq(1);
-
-      if( _parent.hasClass('respondida') )
-          return false;
-
-      _parent.addClass('respondida');
-
-      $('.resposta', _parent ).show();
-      $('.bx-controls-direction').show();
-       $('.bt-concluir').show();
-
-      if( _this.hasClass( 'certo' ) )
-      {
-          /* a função muda o background da div com id="box" */    
-          _this.css("background","#00ff00");
-
-          _resp++;
-      }else
-      {
-          /* a função muda o background da div com id="box" */    
-          $(".certo", _parent).css("background","#00ff00");
-          _this.css("background","#e53e3e");
-          _this.css("color","#ffffff");
-      }
-
-      slider.redrawSlider();
-
-      return false
-  });
+    }, 200);
   });
 
   $('#map .state').click(function(){
-    var regiao = $(this).attr('data-regiao');
-    var $regiao_element = $('#' + regiao);
+    clearTimeout(mouseEnterTimeout); // Clear any existing timer
+    mouseEnterTimeout = setTimeout(() => {
+      var regiao = $(this).attr('data-regiao');
+      var $regiao_element = $('#' + regiao);
 
-    $('.state .shape').removeClass('active');
-    $('.state[data-regiao='+regiao+'] .shape').addClass('active');
+      $('.state .shape').removeClass('active');
+      $('.state[data-regiao='+regiao+'] .shape').addClass('active');
 
-    $('.content-regiao:visible').each((i, $el) => {
-      $($el).fadeOut(() => {
-        $regiao_element.fadeIn();
+      $('.content-regiao:visible').each((i, $el) => {
+        $($el).fadeOut(200, () => {
+          $regiao_element.fadeIn(200);
+        });
       });
-    });
+    }, 200);
+
   });
 
   $('#map .state').click(function(e){
@@ -100,20 +70,29 @@ $(document).ready(function() {
   });
 
 
+  $('.card').hover(function() {
+    $(this).find('.card-inner').css('transform', 'rotateY(180deg)');
+  }, function() {
+    $(this).find('.card-inner').css('transform', 'rotateY(0deg)');
+  });
+
+
+
+  // ==================================== QUIZ ==================================== //
 
   let currentQuestion = 0;
   let quizData = [];
   let shuffledQuestions = [];
   let score = 0; // Variable to keep track of the user's score
 
-// Elements
+  // Elements
   const questionElement = document.getElementById("question");
   const optionsElement = document.getElementById("options");
   const nextButton = document.getElementById("next-button");
   const backButton = document.getElementById("back-button");
   const restartButton = document.getElementById("restart-button");
 
-// Fetch questions from the Open Trivia Database API
+  // Fetch questions from the Open Trivia Database API
   async function fetchQuestions() {
     try {
       const questions = [
@@ -231,7 +210,7 @@ $(document).ready(function() {
     }
   }
 
-// Shuffle function to randomize quiz order
+  // Shuffle function to randomize quiz order
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -240,7 +219,7 @@ $(document).ready(function() {
     return array;
   }
 
-// Load the current question
+  // Load the current question
   function loadQuestion() {
     if (currentQuestion < shuffledQuestions.length) {
       const currentQuiz = shuffledQuestions[currentQuestion];
@@ -266,7 +245,7 @@ $(document).ready(function() {
     }
   }
 
-// Handle answer selection
+  // Handle answer selection
   function selectAnswer(selectedOption, correctOption) {
     const buttons = optionsElement.querySelectorAll("button");
     buttons.forEach((button) => {
@@ -285,7 +264,7 @@ $(document).ready(function() {
     nextButton.classList.remove("hidden");
   }
 
-// Event listeners for buttons
+  // Event listeners for buttons
   nextButton.addEventListener("click", () => {
     currentQuestion++;
     loadQuestion();
@@ -295,7 +274,7 @@ $(document).ready(function() {
     }
   });
 
-// Event listeners for buttons
+  // Event listeners for buttons
   backButton.addEventListener("click", () => {
     currentQuestion--;
     loadQuestion();
@@ -312,39 +291,67 @@ $(document).ready(function() {
     restartButton.classList.add("hidden");
     nextButton.classList.add("hidden");
   });
+  
 
-    $('.card').hover(function() {
-        $(this).find('.card-inner').css('transform', 'rotateY(180deg)');
-    }, function() {
-        $(this).find('.card-inner').css('transform', 'rotateY(0deg)');
-    });
-// modal
- 
-      var modal = $('#myModal');
-      var span = $('.close');
-      var video = $('#video');
-  
-      $('.open-modal').click(function() {
-          var videoUrl = $(this).data('video');
-          video.attr('src', videoUrl);
-          modal.show();
-      });
-  
-      span.click(function() {
-          modal.hide();
-          video.attr('src', '');
-      });
-  
-      $(window).click(function(event) {
-          if (event.target == modal[0]) {
-              modal.hide();
-              video.attr('src', '');
-          }
-      });
-  
-    
-
-// Start the quiz when the page loads
+  // Start the quiz when the page loads
   fetchQuestions();
+
+  // ==================================== FIM QUIZ ================================ //
+
+
+  // ==================================== MODAL =================================== //
+
+  var modal = $('#myModal');
+  var span = $('.close');
+  var video = $('#video');
+
+  $('.open-modal').click(function() {
+    var videoUrl = $(this).data('video');
+    video.attr('src', videoUrl);
+    modal.show();
+  });
+
+  span.click(function() {
+    modal.hide();
+    video.attr('src', '');
+  });
+
+  $(window).click(function(event) {
+    if (event.target == modal[0]) {
+      modal.hide();
+      video.attr('src', '');
+    }
+  });
+
+  // ==================================== FIM MODAL ================================= //
+
+
+  // ==================================== GRAFICO INSCRITOS =================================== //
+
+  $('#grafico-vagas .labels li').on('click mouseenter', function() {
+    var delay = 200;
+
+    clearTimeout(mouseEnterTimeout); // Clear any existing timer
+    mouseEnterTimeout = setTimeout(() => {
+      $('#grafico-vagas .icones').attr('class', `icones ${$(this).data('categoria')}`);
+
+      var $infoTarget = $('#grafico-vagas .info .' + $(this).data('categoria'));
+      var $infoVisible = $(`#grafico-vagas .info div:visible:not(.${$(this).data('categoria')})`);
+
+      if ($infoVisible.length) {
+        $infoVisible.each((i, $el) => {
+          $($el).fadeOut(delay, () => {
+            $infoTarget.fadeIn(delay);
+          });
+        });
+      } else {
+        $infoTarget.fadeIn(delay);
+      }
+    }, delay); // Delay in milliseconds
+  });
+
+
+
+  // ==================================== FIM GRAFICO INSCRITOS =============================== //
 
 });

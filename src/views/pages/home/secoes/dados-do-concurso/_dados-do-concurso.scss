@@ -1,3 +1,9 @@
+$cor-inscritos: #2e2e82;
+$cor-candidatos: #af89b1;
+$cor-aprovados: #656262;
+$cor-nomeados: #7f2a7e;
+$cor-por-ramo: #73ade0;
+
 #dados-do-concurso {
   background: #f5f5f5;
 
@@ -57,7 +63,7 @@
       }
     }
 
-    .grafico-inscritos {
+    #grafico-vagas {
       .instrucao {
         color: #7d2b8a;
         font-size: 14px;
@@ -79,12 +85,14 @@
           li {
             padding: 0 0 0 25px;
             position: relative;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-size: 14px;
             color: #434244;
             font-weight: bold;
+            cursor: pointer;
 
             &:before {
+              transition: all ease-in-out .3s;
               content: "";
               width: 15px;
               height: 15px;
@@ -95,11 +103,31 @@
               top: 50%;
               transform: translateY(-50%);
             }
+
+            &[data-categoria="inscritos"]:before {
+              background: $cor-inscritos;
+            }
+
+            &[data-categoria="candidatos"]:before {
+              background: $cor-candidatos;
+            }
+
+            &[data-categoria="aprovados"]:before {
+              background: $cor-aprovados;
+            }
+
+            &[data-categoria="nomeados"]:before {
+              background: $cor-nomeados;
+            }
+
+            &[data-categoria="por-ramo"]:before {
+              background: $cor-por-ramo;
+            }
           }
 
         }
 
-        .grafico {
+        .icones {
           display: grid;
           grid-template-columns: 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px;
           gap: 1px;
@@ -109,31 +137,109 @@
 
           i:before {
             color: #b3b3b3;
+            transition: all ease-in-out .3s;
+          }
+
+          &.inscritos {
+            li {
+              i:before {
+                color: $cor-inscritos;
+              }
+            }
+          }
+
+          &.candidatos {
+            li:nth-child(-n+151) {
+              i:before {
+                color: $cor-candidatos;
+              }
+            }
+          }
+
+          &.aprovados {
+            li:nth-child(-n+22) {
+              i:before {
+                color: $cor-aprovados;
+              }
+            }
+          }
+
+          &.nomeados {
+            li:nth-child(-n+4) {
+              i:before {
+                color: $cor-nomeados;
+              }
+            }
+          }
+
+          &.por-ramo {
+            li:nth-child(-n+1) {
+              i:before {
+                color: $cor-por-ramo;
+              }
+            }
           }
         }
 
         .info {
-          h3 {
-            font-size: 50px;
-            color: #333380;
-            display: block;
-            margin: 0 0 20px;
-            line-height: normal;
+          color: #414042;
+
+          div {
+            display: none;
+
+            &.inscritos {
+              h3 {
+                color: $cor-inscritos;
+              }
+            }
+
+            &.candidatos {
+              h3 {
+                color: $cor-candidatos;
+              }
+            }
+
+            &.aprovados {
+              h3 {
+                color: $cor-aprovados;
+              }
+            }
+
+            &.nomeados {
+              h3 {
+                color: $cor-nomeados;
+              }
+            }
+
+            &.por-ramo {
+              h3 {
+                color: $cor-por-ramo;
+              }
+            }
+
+            h3 {
+              font-size: 50px;
+              color: #333380;
+              display: block;
+              margin: 0 0 20px;
+              line-height: normal;
+            }
+
+            strong {
+              font-size: 50px;
+              display: block;
+              margin: 0;
+              line-height: normal;
+            }
+
+            span {
+              display: block;
+              font-size: 25px;
+              margin: 0;
+              line-height: normal;
+            }
           }
 
-          strong {
-            font-size: 50px;
-            display: block;
-            margin: 0;
-            line-height: normal;
-          }
-
-          span {
-            display: block;
-            font-size: 25px;
-            margin: 0;
-            line-height: normal;
-          }
         }
       }
     }
