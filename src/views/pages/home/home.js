@@ -25,7 +25,7 @@ $(document).ready(function() {
   //   margin:30,
   // });
 
-  $('#timeline-concursos .timeline li').click(function(){
+  $('#timeline-concursos .timeline li').on('click mouseenter', function() {
     clearTimeout(mouseEnterTimeout); // Clear any existing timer
     mouseEnterTimeout = setTimeout(() => {
       var content = $(this).attr('data-content');
@@ -35,14 +35,16 @@ $(document).ready(function() {
       $(this).nextAll().removeClass('active');
 
       $('#timeline-concursos .conteudo .item:visible').each((i, $el) => {
-        $($el).fadeOut(200, () => {
-          $(content).fadeIn(200);
-        });
+        if ($($el).attr('id') !== content.replaceAll('#', '')) {
+          $($el).fadeOut(200, () => {
+            $(content).fadeIn(200);
+          });
+        }
       });
     }, 200);
   });
 
-  $('#map .state').click(function(){
+  $('#map .state').on('click mouseenter', function() {
     clearTimeout(mouseEnterTimeout); // Clear any existing timer
     mouseEnterTimeout = setTimeout(() => {
       var regiao = $(this).attr('data-regiao');
@@ -52,15 +54,17 @@ $(document).ready(function() {
       $('.state[data-regiao='+regiao+'] .shape').addClass('active');
 
       $('.content-regiao:visible').each((i, $el) => {
-        $($el).fadeOut(200, () => {
-          $regiao_element.fadeIn(200);
-        });
+        if ($($el).attr('id') !== regiao) {
+          $($el).fadeOut(200, () => {
+            $regiao_element.fadeIn(200);
+          });
+        }
       });
     }, 200);
 
   });
 
-  $('#map .state').click(function(e){
+  $('#map .state').click(function(e) {
     e.preventDefault();
   });
 
@@ -70,11 +74,11 @@ $(document).ready(function() {
   });
 
 
-  $('.card').hover(function() {
-    $(this).find('.card-inner').css('transform', 'rotateY(180deg)');
-  }, function() {
-    $(this).find('.card-inner').css('transform', 'rotateY(0deg)');
+  $('.card .reverse').on('click', function() {
+    $(this).parents('.card-inner').addClass('active');
   });
+
+
 
 
 
@@ -353,5 +357,7 @@ $(document).ready(function() {
 
 
   // ==================================== FIM GRAFICO INSCRITOS =============================== //
+
+
 
 });

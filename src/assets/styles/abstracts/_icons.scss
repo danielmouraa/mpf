@@ -41,7 +41,6 @@ $icons: (
   youtube: "\e920",
 );
 
-
 @each $name, $content in $icons {
   .icon-#{$name}:before {
     content: $content;
