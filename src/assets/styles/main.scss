@@ -3,7 +3,6 @@
 @use 'base/space';
 @use 'base/layout';
 
-
 // App font: load your font
 //@use 'base/fonts/arial' as font;
 //@use 'base/fonts/helvetica' as font;
@@ -15,6 +14,8 @@
 
 // Icons
 @use 'base/mat-icons';
+
+@use 'base/icons';
 
 // Page layout: header, main, footer
 @use 'pages/default-layout';

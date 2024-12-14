@@ -1,0 +1,61 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('@fonts/icomoon/icomoon.eot?1dasfd');
+  src:  url('@fonts/icomoon/icomoon.eot?1dasfd#iefix') format('embedded-opentype'),
+  url('@fonts/icomoon/icomoon.ttf?1dasfd') format('truetype'),
+  url('@fonts/icomoon/icomoon.woff?1dasfd') format('woff'),
+  url('@fonts/icomoon/icomoon.svg?1dasfd#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+// Font Icons
+// --------------------------------------------------
+// Icon code array
+
+$icons: (
+  lupa: "\e900",
+  arrow-left: "\e901",
+  arrow-b-left: "\e902",
+  arrow-b-right: "\e903",
+  arrow-right: "\e904",
+  pause: "\e905",
+  menu: "\e906",
+  reverse: "\e907",
+  close: "\e908",
+  contrast: "\e909",
+  disabled: "\e90a",
+  download: "\e90b",
+  facebook: "\e90c",
+  instagram: "\e90d",
+  libras: "\e90e",
+  linkedin: "\e90f",
+  minus-font: "\e919",
+  play-round: "\e91a",
+  play: "\e91b",
+  plus-font: "\e91c",
+  profile: "\e91d",
+  twitter: "\e91e",
+  whatsapp: "\e91f",
+  youtube: "\e920",
+);
+
+
+@each $name, $content in $icons {
+  .icon-#{$name}:before {
+    content: $content;
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    font-size: 20px;
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}

@@ -1,0 +1,57 @@
+#fazemos-diferenca {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  //background: rgb(28,28,106);
+  //background: linear-gradient(315deg, rgba(28,28,106,1) 0%, rgba(53,55,141,1) 84%, rgba(95,94,156,1) 100%);
+
+  background: rgb(93,94,159);
+  background: -moz-linear-gradient(122deg, rgba(93,94,159,1) 0%, rgba(23,23,110,1) 100%);
+  background: -webkit-linear-gradient(122deg, rgba(93,94,159,1) 0%, rgba(23,23,110,1) 100%);
+  background: linear-gradient(122deg, rgba(93,94,159,1) 0%, rgba(23,23,110,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5d5e9f",endColorstr="#17176e",GradientType=1);
+
+  .row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    gap: 30px;
+    justify-content: space-between;
+
+    .column {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      position: relative;
+
+      .image {
+        background: url("@images/mpf-faz-diferenca.png") no-repeat center top;
+        background-size: cover;
+        font-size: 0;
+        color: transparent;
+        line-height: 0;
+        margin: 0;
+        width: 480px;
+        height: 305px;
+
+      }
+
+      p {
+        font-size: 23px;
+        color: #FFF;
+        line-height: normal;
+        margin: 0;
+        margin-top: 30px;
+
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}

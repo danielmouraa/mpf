@@ -1,0 +1,21 @@
+#constituicao-federal {
+  background: #c0dff5;
+
+  .text {
+    p {
+      font-size: 25px;
+      display: block;
+      margin: 30px 0 0;
+      color: #333380;
+      line-height: normal;
+
+      strong {
+        font-weight: bolder;
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}

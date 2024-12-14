@@ -1,0 +1,28 @@
+#novo-tempo {
+  background: #cccccc;
+
+  .text {
+    color: #333380;
+
+  }
+
+  .row {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    gap: 50px;
+    justify-content: space-between;
+
+    .column {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      flex: 1;
+      position: relative;
+    }
+  }
+
+}

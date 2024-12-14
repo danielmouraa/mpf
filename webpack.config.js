@@ -21,6 +21,7 @@ module.exports = {
       '@images': path.join(__dirname, 'src/assets/images/'),
       '@fonts': path.join(__dirname, 'src/assets/fonts/'),
       '@styles': path.join(__dirname, 'src/assets/styles/'),
+      '@pages': path.join(__dirname, 'src/views/pages/'),
       '@scripts': path.join(__dirname, 'src/assets/scripts/'),
     },
   },
