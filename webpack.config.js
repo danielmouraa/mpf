@@ -65,6 +65,11 @@ module.exports = {
   ],
 
   module: {
+    loaders: [
+      { test: /\.(pdf)$/,
+        loader: "file?name=[path][name].[ext]&context=./dist/static"
+      }
+    ],
     rules: [
       // load styles
       {

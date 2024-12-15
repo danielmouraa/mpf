@@ -1,5 +1,22 @@
 import 'owl.carousel';
 
+export function loadYouTubeApi() {
+  return new Promise((resolve) => {
+    if (window.YT && window.YT.Player) {
+      resolve(window.YT); // API already loaded
+      return;
+    }
+
+    const script = document.createElement('script');
+    script.src = 'https://www.youtube.com/iframe_api';
+    document.head.appendChild(script);
+
+    window.onYouTubeIframeAPIReady = () => {
+      resolve(window.YT);
+    };
+  });
+}
+
 $(document).ready(function() {
   let mouseEnterTimeout;
 
@@ -7,23 +24,15 @@ $(document).ready(function() {
     center: false,
     loop:false,
     items:2,
-    margin:30,
+    margin:30
   });
 
   $('#dados-do-concurso .owl-carousel').owlCarousel({
     center: true,
     loop:false,
     items:1,
-    margin:30,
-    // mouseDrag: false
+    margin:30
   });
-
-  // $('#questoes-da-prova .owl-carousel').owlCarousel({
-  //   center: true,
-  //   loop:false,
-  //   items:1,
-  //   margin:30,
-  // });
 
   $('#timeline-concursos .timeline li').on('click mouseenter', function() {
     clearTimeout(mouseEnterTimeout); // Clear any existing timer
@@ -73,14 +82,9 @@ $(document).ready(function() {
     $('#box_'+$(this).val()).css({'opacity': 1 , 'visibitity':'visible'});
   });
 
-
   $('.card .reverse').on('click', function() {
     $(this).parents('.card-inner').addClass('active');
   });
-
-
-
-
 
   // ==================================== QUIZ ==================================== //
 
@@ -354,10 +358,81 @@ $(document).ready(function() {
     }, delay); // Delay in milliseconds
   });
 
-
-
   // ==================================== FIM GRAFICO INSCRITOS =============================== //
 
 
+  // ==================================== DESTAQUE YOUTUBE =================================== //
 
+  const videoId = 'nM2gpgEDFZo'; // Replace with your YouTube video ID
+  let player;
+
+  // Initialize the YouTube API and create the player
+  function initializePlayer() {
+    loadYouTubeApi().then((YT) => {
+      player = new YT.Player('youtube-player', {
+        videoId: videoId, // Replace with your video ID
+        playerVars: {
+          controls: 0,
+          modestbranding: 1,
+          rel: 0,
+          fs: 0,
+          disablekb: 1,
+          iv_load_policy: 3,
+          playsinline: 1,
+          autoplay: 1,
+          origin: window.location.origin,
+          loop: 1,
+          playlist: videoId
+        },
+        events: {
+          onReady: (event) => {
+            const player = event.target;
+            player.mute(); // Mute for autoplay compatibility
+            player.playVideo(); // Auto-start the video
+
+            setupCustomControls(player);
+          },
+          onStateChange: onPlayerStateChange,
+        },
+      });
+
+    });
+  }
+
+  // Setup custom controls (play, pause, seek bar, etc.)
+  function setupCustomControls(player) {
+    const playButton = document.getElementById('play-button');
+    const pauseButton = document.getElementById('pause-button');
+    // Play video
+    playButton.addEventListener('click', () => {
+      player.playVideo();
+    });
+
+    // Pause video
+    pauseButton.addEventListener('click', () => {
+      player.pauseVideo();
+    });
+  }
+
+  // Handle player state changes (optional)
+  function onPlayerStateChange(event) {
+    if (event.data === YT.PlayerState.PLAYING) {
+      $('#play-button').fadeOut(200, function() {
+        $('#pause-button').fadeIn(200);
+      })
+    }
+
+    if (event.data === YT.PlayerState.PAUSED) {
+      $('#pause-button').fadeOut(200, function() {
+        $('#play-button').fadeIn(200);
+      })
+    }
+  }
+
+  // Initialize the player
+  initializePlayer();
+  // ==================================== FIM DESTAQUE YOUTUBE =================================== //
 });
+
+
+

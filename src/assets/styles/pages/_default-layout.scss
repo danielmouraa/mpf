@@ -102,6 +102,7 @@ body {
 
   main {
     .main-content {
+      overflow: hidden;
 
       > section {
         min-height: 72dvh;

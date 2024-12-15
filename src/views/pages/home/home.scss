@@ -11,7 +11,7 @@
 @import '@styles/abstracts/_mixins.scss';
 
 
-html { scroll-behavior: smooth; /* Ativa a rolagem suave */ }
+html { scroll-behavior: smooth; scroll-padding-top: 80px; /* Ativa a rolagem suave */ }
 
 .align-wrapper {
   & > .text {

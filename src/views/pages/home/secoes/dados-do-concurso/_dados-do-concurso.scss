@@ -187,6 +187,10 @@ $cor-por-ramo: #73ade0;
           div {
             display: none;
 
+            &.active {
+              display: block;
+            }
+
             &.inscritos {
               h3 {
                 color: $cor-inscritos;
