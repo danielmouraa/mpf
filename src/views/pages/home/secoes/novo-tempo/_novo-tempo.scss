@@ -1,5 +1,11 @@
+@import '@styles/abstracts/_variables.scss';
+
 #novo-tempo {
   background: #cccccc;
+
+  body.contraste & {
+    background: $contraste-background-color;
+  }
 
   .text {
     color: #333380;

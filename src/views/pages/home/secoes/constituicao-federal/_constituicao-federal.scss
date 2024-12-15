@@ -1,5 +1,11 @@
+@import '@styles/abstracts/_variables.scss';
+
 #constituicao-federal {
   background: #c0dff5;
+
+  body.contraste & {
+    background: $contraste-background-color;
+  }
 
   .text {
     p {

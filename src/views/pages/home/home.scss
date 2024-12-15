@@ -1,5 +1,4 @@
 @use '@styles/main.scss';
-@use '@styles/abstracts/_variables.scss' as var;
 @use '@pages/home/secoes/inicio/_inicio.scss';
 @use '@pages/home/secoes/fazemos-diferenca/_fazemos-diferenca.scss';
 @use '@pages/home/secoes/novo-tempo/_novo-tempo.scss';
@@ -9,6 +8,7 @@
 @use '@pages/home/secoes/dados-do-concurso/_dados-do-concurso.scss';
 @use '@pages/home/secoes/questoes-da-prova/_questoes-da-prova.scss';
 @import '@styles/abstracts/_mixins.scss';
+@import '@styles/abstracts/_variables.scss';
 
 
 html { scroll-behavior: smooth; scroll-padding-top: 80px; /* Ativa a rolagem suave */ }
@@ -99,6 +99,10 @@ html { scroll-behavior: smooth; scroll-padding-top: 80px; /* Ativa a rolagem sua
     border-radius: 50px;
     width: 100%;
     transform: rotateY(180deg);
+
+    body.contraste & {
+      background: $contraste-background-color;
+    }
   }
 
   .reverse {

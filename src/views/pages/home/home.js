@@ -437,6 +437,33 @@ $(document).ready(function() {
   // Initialize the player
   initializePlayer();
   // ==================================== FIM DESTAQUE YOUTUBE =================================== //
+
+
+  // ==================================== ACESSIBILIDADE =================================== //
+
+  $('#accessibility button').on('click', function() {
+    var action = $(this).data('action');
+
+    switch (action) {
+      case 'libras':
+        console.log('libras')
+        break;
+      case 'disabled':
+        console.log('disabled')
+        break;
+      case 'font-plus':
+        console.log('font-plus')
+        break;
+      case 'font-minus':
+        console.log('font-minus')
+        break;
+      case 'contrast':
+        $('body').toggleClass('contraste');
+        break;
+    }
+  });
+
+  // ==================================== FIM ACESSBILIDADE ================================= //
 });
 
 

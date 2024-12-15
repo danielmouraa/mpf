@@ -1,5 +1,11 @@
+@import '@styles/abstracts/_variables.scss';
+
 #linha-do-tempo {
   background: #7d2b8a;
+
+  body.contraste & {
+    background: $contraste-background-color;
+  }
 
   .align-wrapper {
     padding: 50px 0;
@@ -117,6 +123,10 @@
         position: relative;
         z-index: 1;
         font-weight: bold;
+
+        body.contraste & {
+          background: $contraste-background-color;
+        }
       }
 
       .bullet {
@@ -126,12 +136,20 @@
         border-radius: 50%;
         background: #a3d0f0;
 
+        body.contraste & {
+          background: $contraste-background-color;
+        }
+
         &:before,
         &:after {
           content: "";
           z-index: 0;
           position: absolute;
           background: #a3d0f0;
+
+          body.contraste & {
+            background: $contraste-font-color;
+          }
         }
 
         &:before {
@@ -163,6 +181,11 @@
         background: #7d2b8a;
         border-top: 1px solid #a3d0f0;
         padding: 30px 0;
+
+        body.contraste & {
+          background: $contraste-background-color;
+          border-color: $contraste-font-color;
+        }
 
         strong {
           font-size: 40px;

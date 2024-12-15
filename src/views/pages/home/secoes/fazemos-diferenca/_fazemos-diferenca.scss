@@ -1,3 +1,5 @@
+@import '@styles/abstracts/_variables.scss';
+
 #fazemos-diferenca {
   display: flex;
   flex-direction: column;
@@ -11,6 +13,10 @@
   background: -webkit-linear-gradient(122deg, rgba(93,94,159,1) 0%, rgba(23,23,110,1) 100%);
   background: linear-gradient(122deg, rgba(93,94,159,1) 0%, rgba(23,23,110,1) 100%);
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#5d5e9f",endColorstr="#17176e",GradientType=1);
+
+  body.contraste & {
+    background: $contraste-background-color;
+  }
 
   .row {
     width: 100%;

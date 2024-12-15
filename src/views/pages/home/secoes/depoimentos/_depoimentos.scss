@@ -1,5 +1,11 @@
+@import '@styles/abstracts/_variables.scss';
+
 #depoimentos {
   background: #2e2e82;
+
+  body.contraste & {
+    background: $contraste-background-color;
+  }
 
   .dados .text{
     width: 70%;
