@@ -1,3 +1,36 @@
+@import '@styles/abstracts/_mixins.scss';
+
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 0;
+  background: #333380;
+
+  body.contraste & {
+    background: #000;
+  }
+
+  h1 {
+    display: block;
+    margin: 0 auto;
+    width: 407px;
+    height: 89px;
+
+    a {
+      width: 100%;
+      height: 100%;
+      display: block;
+      background: url("@images/app-logo.png") no-repeat center top;
+      background-size: cover;
+      color: transparent;
+      font-size: 0;
+    }
+  }
+}
+
 
 body {
   position: relative;
@@ -12,32 +45,6 @@ body {
     flex: 1;
   }
 
-  header {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 50px 0;
-    background: #333380;
-
-    h1 {
-      display: block;
-      margin: 0 auto;
-      width: 407px;
-      height: 89px;
-
-      a {
-        width: 100%;
-        height: 100%;
-        display: block;
-        background: url("@images/app-logo.png") no-repeat center top;
-        background-size: cover;
-        color: transparent;
-        font-size: 0;
-      }
-    }
-  }
 
   #menu {
     display: flex;
@@ -84,6 +91,10 @@ body {
           color: #333380;
           font-size: 18px;
           font-weight: bold;
+
+          body.contraste & {
+            color: yellow;
+          }
         }
       }
     }
@@ -114,14 +125,12 @@ body {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      //gap: 50px;
 
       .row {
         width: 100%;
         display: flex;
         flex-direction: row;
         flex: 1;
-        //gap: 50px;
         justify-content: space-between;
 
         .column {
@@ -129,10 +138,7 @@ body {
           min-width: 42%;
           display: flex;
           flex-direction: column;
-          //align-items: center;
-          //justify-content: center;
           position: relative;
-
 
           .text {
             color: #FFF;
@@ -157,7 +163,99 @@ body {
 
         }
       }
+    }
 
+    .links-uteis {
+      background: #2e2e82;
+
+      .align-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 50px;
+
+        .redes-sociais {
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+          gap: 50px;
+
+          strong {
+            font-size: 25px;
+            color: #FFF;
+          }
+
+          ul {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            gap: 15px;
+
+            li {
+              a {
+                transition: all ease-in-out .2s;
+                width: 30px;
+                height: 30px;
+                display: block;
+                font-size: 0;
+                text-decoration: none;
+
+                &:hover {
+                  opacity: .8;
+                }
+
+                &:before {
+                  font-size: 30px !important;
+                  color: #FFF;
+                }
+              }
+
+              &.facebook a {
+                @include icomoon-icon('facebook');
+              }
+
+              &.instagram a {
+                @include icomoon-icon('instagram');
+              }
+
+              &.twitter a {
+                @include icomoon-icon('twitter');
+              }
+
+              &.youtube a {
+                @include icomoon-icon('youtube');
+              }
+
+              &.whatsapp a {
+                @include icomoon-icon('whatsapp');
+              }
+
+              &.linkedin a {
+                @include icomoon-icon('linkedin');
+              }
+            }
+          }
+        }
+
+        .mpf {
+          h4 {
+            a {
+              width: 130px;
+              height: 60px;
+              display: block;
+              background: url("@images/logo-mpf.svg") no-repeat center top;
+              font-size: 0;
+              color: transparent;
+            }
+          }
+        }
+      }
     }
   }
 }
