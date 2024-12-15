@@ -100,9 +100,23 @@
       color: #fff;
 
       .resultado {
-        flex: 1;
+        font-weight: bold;
+        font-size: 18px;
         text-align: center;
-        color: #000;
+        display: block;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 20px;
+        align-items: center;
+        background: no-repeat;
+        color: #414042;
+
+
+        button {
+          width: fit-content;
+        }
       }
 
       .index {
@@ -112,7 +126,7 @@
         font-weight: bold;
       }
 
-      div {
+      div:not(.resultado) {
         align-self: stretch;
         flex: 1;
         display: flex;
@@ -131,6 +145,10 @@
 
   #options {
     padding: 20px;
+
+    &:empty {
+      display: none;
+    }
   }
 
   #options button {
@@ -177,6 +195,15 @@
     display: none;
   }
 
+  button {
+    font-weight: bold;
+
+    &.outline {
+      background: #FFF;
+      color: #333380;
+    }
+  }
+
   .actions {
     display: flex;
     flex-direction: row;
@@ -186,24 +213,19 @@
     > div {
       min-width: 110px;
     }
-
-    button {
-      font-weight: bold;
-
-      &.outline {
-        background: #FFF;
-        color: #333380;
-      }
-    }
   }
 
-  .devolutiva {
+  #devolutiva {
     color: #333380;
     font-weight: bold;
     font-size: 18px;
     text-align: center;
     display: block;
     flex: 1;
+
+    &.hidden {
+      display: none;
+    }
   }
 
 

@@ -98,116 +98,115 @@ $(document).ready(function() {
   const optionsElement = document.getElementById("options");
   const nextButton = document.getElementById("next-button");
   const backButton = document.getElementById("back-button");
-  const restartButton = document.getElementById("restart-button");
+  const devolutiva = document.getElementById("devolutiva");
+  const questions = [
+    {
+      "question": "O tema central do fragmento ao lado é:",
+      "correct_answer": "Há uma similaridade estrutural entre a elaboração publicitária e elaboração onírica.",
+      "incorrect_answers": [
+        "A publicidade desequilibra a relação de forças existente entre a demanda e a oferta de bens de consumo.",
+        "Dramatizar o mito da queda é o objetivo perseguido pela retórica publicitária.",
+        "Os comerciais veiculados pelos meios de comunicação cumprem o papel de informar o consumidor em potencial sobre as reais qualidades dos produtos.",
+        "Ao adquirir bens de consumo, o consumidor sublima suas carências afetivas num estado de deleite sublime."
+      ]
+    },
+    {
+      "question": "Uma leitura errada do texto levaria a afirmar que:",
+      "correct_answer": "A felicidade prometida nas propagandas dá ao homem a consciência de sua finitude.",
+      "incorrect_answers": [
+        "Interpretar literalmente o discurso publicitário é uma atitude ingênua.",
+        "A publicidade elabora um cenário onírico para os objetos da sociedade industrial.",
+        "O discurso publicitário é formulado com mensagens que se sustentam no princípio do prazer.",
+        "Está incorporado à publicidade o componente mítico de retorno ao paraíso."
+      ]
+    },
+    {
+      "question": "Assinale a letra que contém enunciado falso.",
+      "correct_answer": "Colocadas em seqüência, as expressões \"a se ressalvar\" e \"a se ressaltar\" (l.1O) são equivalentes quanto ao sentido.",
+      "incorrect_answers": [
+        "O termo \"(ritualiza-se)\" especifica o sentido de \"representa-se\" (l.20).",
+        "O segmento \"- da consciência da finitude -\" explica a expressão \"lacuna primordial\" (l.16).<",
+        "As expressões \"deleite sublime\", \"estado nirvânico\", \"gozo celestial\" (ls.8 e 9), colocadas em seqüência, reiteram a mesma idéia.",
+        "Em \"A sua eficiência\" (l.5), o possessivo refere-se à eficiência da publicidade."
+      ]
+    },
+
+
+    {
+      "question": "No sistema jurídico brasileiro,",
+      "correct_answer": "a lei pode criar exceções à regra da obrigatoriedade da licitação.",
+      "incorrect_answers": [
+        "é obrigatória a licitação em todos os casos de compras, alienações e serviços.",
+        "é obrigatória a licitação apenas nos casos expressos em lei.",
+        "a lei não pode criar exceções à regra da obrigatoriedade da licitação.",
+        "as empresas públicas e as sociedades de economia mista são obrigadas a licitar, se assim estiver previsto em seus estatutos."
+      ]
+    },
+    {
+      "question": "É objetivo da República Federativa do Brasil, dentre outros:",
+      "correct_answer": "erradicar a pobreza e a marginalização e reduzir as desigualdades sociais e regionais",
+      "incorrect_answers": [
+        "solução pacífica dos conflitos",
+        "autodeterminação dos povos",
+        "cidadania",
+        "prevalência dos direitos humanos"
+      ]
+    },
+    {
+      "question": "Pode propor a ação de inconstitucionalidade perante o Supremo Tribunal Federal:",
+      "correct_answer": "o Procurador-Geral da República.",
+      "incorrect_answers": [
+        "o Conselho Seccional da Ordem dos Advogados do Brasil.",
+        "qualquer partido político.",
+        "qualquer confederação sindical ou entidade de classe.",
+        "a Mesa de Câmara Municipal."
+      ]
+    },
+    {
+      "question": "São princípios institucionais do Ministério Público:",
+      "correct_answer": "unidade, indivisibilidade e independência funcional",
+      "incorrect_answers": [
+        "unidade, hierarquia, indivisibilidade e independência funcional",
+        "unidade, autonomia administrativa e financeira e indivisibilidade",
+        "autonomia funcional, autonomia administrativa e autonomia financeira",
+        "unidade, indivisibilidade e hierarquia"
+      ]
+    },
+    {
+      "question": "A destituição do Procurador-Geral da República depende:",
+      "correct_answer": "da iniciativa do Presidente da República, precedida de autorização da maioria absoluta do Senado Federal.",
+      "incorrect_answers": [
+        "da iniciativa exclusiva do Presidente da República.",
+        "da iniciativa do Congresso Nacional.",
+        "da iniciativa do Senado Federal.",
+        "de iniciativa dos membros do Ministério Público."
+      ]
+    },
+    {
+      "question": "A respeito do servidor concursado do Ministério Público da União, é correto dizer que:",
+      "correct_answer": "não pode aposentar-se voluntariamente, enquanto pendente processo administrativo disciplinar contra ele.",
+      "incorrect_answers": [
+        "adquire vitaliciedade após dois anos de efetivo exercício.",
+        "é demissível ad nutum enquanto não completa dois anos de efetivo exercício.",
+        "somente pode ser posto em disponibilidade por força de processo administrativo disciplinar, em que se lhe assegure o direito de ampla defesa.",
+        "somente pode ser demitido por força de sentença judicial transitada em julgado."
+      ]
+    },
+    {
+      "question": "Assinale a assertiva correta.",
+      "correct_answer": "O processo disciplinar pode ser revisto, a qualquer tempo; ainda que já falecido o servidor punido.",
+      "incorrect_answers": [
+        "A simples alegação de injustiça da penalidade pode constituir fundamento para a revisão.",
+        "O processo disciplinar pode ser revisto exclusivamente a pedido do servidor punido.",
+        "Se a Comissão Revisora entender que a punição foi excessivamente branda, poderá propor o agravamento da penalidade inicialmente imposta.",
+        "No processo revisionai, o ônus da prova cabe à Comissão Revisora."
+      ]
+    }
+  ]
 
   // Fetch questions from the Open Trivia Database API
   async function fetchQuestions() {
     try {
-      const questions = [
-        {
-          "question": "O tema central do fragmento ao lado é:",
-          "correct_answer": "Há uma similaridade estrutural entre a elaboração publicitária e elaboração onírica.",
-          "incorrect_answers": [
-            "A publicidade desequilibra a relação de forças existente entre a demanda e a oferta de bens de consumo.",
-            "Dramatizar o mito da queda é o objetivo perseguido pela retórica publicitária.",
-            "Os comerciais veiculados pelos meios de comunicação cumprem o papel de informar o consumidor em potencial sobre as reais qualidades dos produtos.",
-            "Ao adquirir bens de consumo, o consumidor sublima suas carências afetivas num estado de deleite sublime."
-          ]
-        },
-        {
-          "question": "Uma leitura errada do texto levaria a afirmar que:",
-          "correct_answer": "A felicidade prometida nas propagandas dá ao homem a consciência de sua finitude.",
-          "incorrect_answers": [
-            "Interpretar literalmente o discurso publicitário é uma atitude ingênua.",
-            "A publicidade elabora um cenário onírico para os objetos da sociedade industrial.",
-            "O discurso publicitário é formulado com mensagens que se sustentam no princípio do prazer.",
-            "Está incorporado à publicidade o componente mítico de retorno ao paraíso."
-          ]
-        },
-        {
-          "question": "Assinale a letra que contém enunciado falso.",
-          "correct_answer": "Colocadas em seqüência, as expressões \"a se ressalvar\" e \"a se ressaltar\" (l.1O) são equivalentes quanto ao sentido.",
-          "incorrect_answers": [
-            "O termo \"(ritualiza-se)\" especifica o sentido de \"representa-se\" (l.20).",
-            "O segmento \"- da consciência da finitude -\" explica a expressão \"lacuna primordial\" (l.16).<",
-            "As expressões \"deleite sublime\", \"estado nirvânico\", \"gozo celestial\" (ls.8 e 9), colocadas em seqüência, reiteram a mesma idéia.",
-            "Em \"A sua eficiência\" (l.5), o possessivo refere-se à eficiência da publicidade."
-          ]
-        },
-
-
-        {
-          "question": "No sistema jurídico brasileiro,",
-          "correct_answer": "a lei pode criar exceções à regra da obrigatoriedade da licitação.",
-          "incorrect_answers": [
-            "é obrigatória a licitação em todos os casos de compras, alienações e serviços.",
-            "é obrigatória a licitação apenas nos casos expressos em lei.",
-            "a lei não pode criar exceções à regra da obrigatoriedade da licitação.",
-            "as empresas públicas e as sociedades de economia mista são obrigadas a licitar, se assim estiver previsto em seus estatutos."
-          ]
-        },
-        {
-          "question": "É objetivo da República Federativa do Brasil, dentre outros:",
-          "correct_answer": "erradicar a pobreza e a marginalização e reduzir as desigualdades sociais e regionais",
-          "incorrect_answers": [
-            "solução pacífica dos conflitos",
-            "autodeterminação dos povos",
-            "cidadania",
-            "prevalência dos direitos humanos"
-          ]
-        },
-        {
-          "question": "Pode propor a ação de inconstitucionalidade perante o Supremo Tribunal Federal:",
-          "correct_answer": "o Procurador-Geral da República.",
-          "incorrect_answers": [
-            "o Conselho Seccional da Ordem dos Advogados do Brasil.",
-            "qualquer partido político.",
-            "qualquer confederação sindical ou entidade de classe.",
-            "a Mesa de Câmara Municipal."
-          ]
-        },
-        {
-          "question": "São princípios institucionais do Ministério Público:",
-          "correct_answer": "unidade, indivisibilidade e independência funcional",
-          "incorrect_answers": [
-            "unidade, hierarquia, indivisibilidade e independência funcional",
-            "unidade, autonomia administrativa e financeira e indivisibilidade",
-            "autonomia funcional, autonomia administrativa e autonomia financeira",
-            "unidade, indivisibilidade e hierarquia"
-          ]
-        },
-        {
-          "question": "A destituição do Procurador-Geral da República depende:",
-          "correct_answer": "da iniciativa do Presidente da República, precedida de autorização da maioria absoluta do Senado Federal.",
-          "incorrect_answers": [
-            "da iniciativa exclusiva do Presidente da República.",
-            "da iniciativa do Congresso Nacional.",
-            "da iniciativa do Senado Federal.",
-            "de iniciativa dos membros do Ministério Público."
-          ]
-        },
-        {
-          "question": "A respeito do servidor concursado do Ministério Público da União, é correto dizer que:",
-          "correct_answer": "não pode aposentar-se voluntariamente, enquanto pendente processo administrativo disciplinar contra ele.",
-          "incorrect_answers": [
-            "adquire vitaliciedade após dois anos de efetivo exercício.",
-            "é demissível ad nutum enquanto não completa dois anos de efetivo exercício.",
-            "somente pode ser posto em disponibilidade por força de processo administrativo disciplinar, em que se lhe assegure o direito de ampla defesa.",
-            "somente pode ser demitido por força de sentença judicial transitada em julgado."
-          ]
-        },
-        {
-          "question": "Assinale a assertiva correta.",
-          "correct_answer": "O processo disciplinar pode ser revisto, a qualquer tempo; ainda que já falecido o servidor punido.",
-          "incorrect_answers": [
-            "A simples alegação de injustiça da penalidade pode constituir fundamento para a revisão.",
-            "O processo disciplinar pode ser revisto exclusivamente a pedido do servidor punido.",
-            "Se a Comissão Revisora entender que a punição foi excessivamente branda, poderá propor o agravamento da penalidade inicialmente imposta.",
-            "No processo revisionai, o ônus da prova cabe à Comissão Revisora."
-          ]
-        }
-      ]
-
       quizData = questions;
       shuffledQuestions = shuffleArray([...quizData]);
       currentQuestion = 0;
@@ -246,9 +245,22 @@ $(document).ready(function() {
 
       nextButton.classList.add("hidden");
     } else {
-      questionElement.innerHTML = `<span class="resultado">Finalizado! 🎉<br/> Você acertou: ${score} de ${shuffledQuestions.length}</span>`;
+      questionElement.innerHTML = `<div class="resultado"><span>Finalizado! 🎉<br/> Você acertou: ${score} de ${shuffledQuestions.length}</span><button id="restart-button" class="hidden outline">tentar novamente</button></div>`;
       optionsElement.innerHTML = "";
+
+      var restartButton = document.getElementById("restart-button");
+      restartButton.addEventListener("click", () => {
+        currentQuestion = 0;
+        shuffledQuestions = shuffleArray([...quizData]);
+        score = 0; // Reset score for the new quiz
+        loadQuestion();
+        restartButton.classList.add("hidden");
+        nextButton.classList.add("hidden");
+      });
+
       nextButton.classList.add("hidden");
+      backButton.classList.add("hidden");
+      devolutiva.classList.add("hidden");
       restartButton.classList.remove("hidden");
     }
   }
@@ -277,7 +289,7 @@ $(document).ready(function() {
     currentQuestion++;
     loadQuestion();
 
-    if (currentQuestion > 0) {
+    if (currentQuestion > 0 && currentQuestion < questions.length) {
       backButton.classList.remove("hidden");
     }
   });
@@ -291,14 +303,7 @@ $(document).ready(function() {
     }
   });
 
-  restartButton.addEventListener("click", () => {
-    currentQuestion = 0;
-    shuffledQuestions = shuffleArray([...quizData]);
-    score = 0; // Reset score for the new quiz
-    loadQuestion();
-    restartButton.classList.add("hidden");
-    nextButton.classList.add("hidden");
-  });
+
   
 
   // Start the quiz when the page loads
