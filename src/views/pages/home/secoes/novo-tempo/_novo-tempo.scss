@@ -1,4 +1,6 @@
 @import '@styles/abstracts/_variables.scss';
+@import '@styles/abstracts/_mixins.scss';
+
 
 #novo-tempo {
   background: #cccccc;
@@ -20,6 +22,13 @@
     gap: 50px;
     justify-content: space-between;
 
+    @include mobile-tablet {
+      justify-content: normal;
+      align-items: normal;
+      gap: 30px;
+      flex-direction: column;
+    }
+
     .column {
       width: 50%;
       display: flex;
@@ -29,6 +38,9 @@
       flex: 1;
       position: relative;
 
+      @include mobile-tablet {
+        width: 100%;
+      }
     }
   }
 

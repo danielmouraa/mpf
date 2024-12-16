@@ -19,7 +19,6 @@
   }
 }
 
-
 /* Mixin for font properties */
 @mixin font-face($font-family, $font-weight, $font-style) {
   font-family: $font-family, sans-serif;
@@ -27,4 +26,23 @@
   font-style: $font-style;
 }
 
+// For small devices (phones, less than 768px)
+@mixin mobile {
+  @media (max-width: 767.98px) {
+    @content;
+  }
+}
 
+// For medium devices (tablets, 768px to 1024px)
+@mixin tablet {
+  @media (min-width: 768px) and (max-width: 1280px) {
+    @content;
+  }
+}
+
+// For mobile and tablet combined (less than 1280px)
+@mixin mobile-tablet {
+  @media (max-width: 1280px) {
+    @content;
+  }
+}

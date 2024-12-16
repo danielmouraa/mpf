@@ -12,13 +12,18 @@ body {
   }
 
   .align-wrapper {
-    width: 1280px;
+    width: 100%;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 0 50px;
+    padding: 50px clamp(30px, 3.91%, 50px);
     display: flex;
     flex-direction: column;
     justify-content: center;
     flex: 1;
+
+    @include mobile-tablet {
+      padding: 30px clamp(30px, 3.91%, 50px);
+    }
   }
 }
 
@@ -29,6 +34,12 @@ body {
 
   body.contraste & {
     background: $contraste-background-color;
+  }
+
+  .align-wrapper {
+    @include mobile-tablet {
+      padding: 0 clamp(30px, 3.91%, 50px);
+    }
   }
 
   ul {
@@ -73,14 +84,13 @@ header {
   h1 {
     display: block;
     margin: 0 auto;
-    width: 407px;
-    height: 89px;
+    width: 100%;
+    max-width: 407px;
 
     a {
       width: 100%;
       height: 100%;
       display: block;
-      background: url("@images/app-logo.svg") no-repeat center top;
       background-size: cover;
       color: transparent;
       font-size: 0;
@@ -89,6 +99,7 @@ header {
 }
 
 #menu {
+  transition: all ease-in-out .2s;
   display: flex;
   width: 100%;
   height: 80px;
@@ -102,8 +113,55 @@ header {
     background: $contraste-background-color;
   }
 
+  &.active {
+    transform: translateX(0);
+  }
+
+  @include mobile-tablet {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 75%;
+    transform: translateX(-100%);
+  }
+
   > * {
     flex: 1;
+  }
+
+  .align-wrapper {
+    @include mobile-tablet {
+      padding-top: 30px;
+      padding-bottom: 30px;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 50px;
+    }
+  }
+
+  #menu-close {
+    display: none;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+    font-size: 1.8rem;
+    line-height: normal;
+    outline: none;
+    color: #333380;
+    margin-bottom: 30px;
+
+    i {
+      font-size: 0;
+
+      &:before {
+        color: #333380;
+      }
+    }
+
+    @include mobile-tablet {
+      display: flex;
+    }
   }
 
   ul {
@@ -116,9 +174,16 @@ header {
     padding: 0;
     flex: 1;
 
+    @include mobile-tablet {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 15px;
+    }
+
     li {
       display: flex;
-      height: 100%;
+      //height: 100%;
       flex-direction: column;
       justify-content: center;
       margin-left: 30px;
@@ -127,16 +192,24 @@ header {
         margin-left: 0;
       }
 
+      @include mobile-tablet {
+        margin: 0;
+      }
+
       a {
         padding: 0 10px;
-        width: 100%;
-        height: 100%;
+        //width: 100%;
+        //height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
         color: #333380;
         font-size: 1.8rem;
         font-weight: bold;
+
+        @include mobile-tablet {
+          padding: 0;
+        }
       }
     }
   }
@@ -151,9 +224,9 @@ main {
       display: flex;
       flex-direction: column;
 
-      .align-wrapper {
-        padding: 50px !important;
-      }
+      //.align-wrapper {
+      //  padding: 50px !important;
+      //}
     }
   }
 }
@@ -173,12 +246,24 @@ footer {
     flex-direction: row;
     justify-content: space-between;
 
+    @include mobile-tablet {
+      padding: 25px;
+    }
+
+    @include mobile-tablet {
+      flex-direction: column;
+    }
+
     .row {
       width: 100%;
       display: flex;
       flex-direction: row;
       flex: 1;
       justify-content: space-between;
+
+      @include mobile-tablet {
+        flex-direction: column;
+      }
 
       .column {
         width: fit-content;
@@ -226,12 +311,21 @@ footer {
       align-items: center;
       padding: 25px 50px;
 
+      @include mobile-tablet {
+        flex-direction: column;
+      }
+
       .redes-sociais {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         gap: 50px;
+
+        @include mobile-tablet {
+          flex-direction: column;
+          gap: 25px;
+        }
 
         strong {
           font-size: 2.5rem;

@@ -1,4 +1,5 @@
 @import '@styles/abstracts/_variables.scss';
+@import '@styles/abstracts/_mixins.scss';
 
 #fazemos-diferenca {
   display: flex;
@@ -18,6 +19,12 @@
     background: $contraste-background-color;
   }
 
+  .menu-open {
+    i:before {
+      color: #FFF;
+    }
+  }
+
   .row {
     width: 100%;
     display: flex;
@@ -25,6 +32,13 @@
     flex: 1;
     gap: 30px;
     justify-content: space-between;
+
+    @include mobile-tablet {
+      justify-content: normal;
+      align-items: normal;
+      gap: 30px;
+      flex-direction: column;
+    }
 
     .column {
       width: 50%;
@@ -35,16 +49,20 @@
       flex: 1;
       position: relative;
 
+      @include mobile-tablet {
+        width: 100%;
+      }
+
       .image {
-        background: url("@images/mpf-faz-diferenca.png") no-repeat center top;
-        background-size: cover;
+        width: 100%;
         font-size: 0;
         color: transparent;
         line-height: 0;
         margin: 0;
-        width: 480px;
-        height: 305px;
 
+        img {
+          width: 100%;
+        }
       }
 
       p {

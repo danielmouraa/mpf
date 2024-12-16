@@ -1,10 +1,17 @@
 @import '@styles/abstracts/_variables.scss';
+@import '@styles/abstracts/_mixins.scss';
 
 #depoimentos {
   background: #2e2e82;
 
   body.contraste & {
     background: $contraste-background-color;
+  }
+
+  .menu-open {
+    i:before {
+      color: #FFF;
+    }
   }
 
   .dados .text{
@@ -62,5 +69,29 @@
 
   .card-front {
     min-height: 460px;
+  }
+
+  .card {
+    .membro {
+      @include mobile-tablet {
+        flex-direction: column;
+      }
+
+      .dados {
+        @include mobile-tablet {
+          order: 1;
+        }
+      }
+
+      .avatar {
+        @include mobile-tablet {
+          order: 0;
+          margin: 0 auto;
+          width: 100%;
+          max-width: none;
+        }
+      }
+    }
+
   }
 }

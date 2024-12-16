@@ -24,10 +24,12 @@ export function loadYouTubeApi() {
 $(document).ready(function() {
   let mouseEnterTimeout;
 
+  const viewWidth = window.outerWidth;
+
   $('#depoimentos .owl-carousel').owlCarousel({
     center: false,
     loop:false,
-    items:2,
+    items: (viewWidth > 1280) ? 2 : 1,
     margin:30
   });
 
@@ -37,6 +39,14 @@ $(document).ready(function() {
     items:1,
     margin:30
   });
+
+  if (viewWidth < 1280) {
+    $('#linha-do-tempo .slides').owlCarousel({
+      center: true,
+      loop:false,
+      items:1,
+    });
+  }
 
   $('#timeline-concursos .timeline li').on('click mouseenter', function() {
     clearTimeout(mouseEnterTimeout); // Clear any existing timer
@@ -506,6 +516,18 @@ $(document).ready(function() {
   });
 
   // ==================================== FIM ACESSBILIDADE ================================= //
+
+
+  // ==================================== MENU =================================== //
+
+  $('.menu-open').on('click', function() {
+    $('#menu').addClass('active');
+  });
+
+  $('#menu-close').on('click', function() {
+    $('#menu').removeClass('active');
+  });
+  // ==================================== FIM MENU =================================== //
 });
 
 
