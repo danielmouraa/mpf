@@ -29,6 +29,31 @@
     }
   }
 
+  .owl-theme {
+    .owl-dots {
+      border: 1px solid #aaaaca;
+
+      .owl-dot {
+
+        &.active {
+          span {
+            background: #999999;
+          }
+        }
+
+        &:hover {
+          span {
+            background: #999999;
+          }
+        }
+
+        span {
+          background: #f5f5f5;
+        }
+      }
+    }
+  }
+
   .item {
     flex: 1;
     display: flex;

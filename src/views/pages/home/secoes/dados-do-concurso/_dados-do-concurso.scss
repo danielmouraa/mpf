@@ -445,6 +445,10 @@ $cor-por-ramo: #73ade0;
             top: 50%;
             left: 7px;
             margin-top: 2px;
+
+            body.contraste & {
+              background: $contraste-font-color;
+            }
           }
 
           li {

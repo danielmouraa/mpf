@@ -310,3 +310,37 @@ footer {
   }
 }
 
+.owl-theme {
+  .owl-dots {
+    width: fit-content;
+    margin: 30px auto 0 !important;
+    padding: 5px 20px;
+    border: 1px solid #3f3f3f;
+    display: flex;
+    border-radius: 20px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+    .owl-dot {
+
+      &.active {
+        span {
+          background: #333333;
+        }
+      }
+
+      &:hover {
+        span {
+          background: #333333;
+          opacity: .8;
+        }
+      }
+
+      span {
+        transition: all ease-in-out .2s;
+        background: #999999;
+      }
+    }
+  }
+}
