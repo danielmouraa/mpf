@@ -12,7 +12,13 @@
 @import '@styles/abstracts/_mixins.scss';
 
 
-html { scroll-behavior: smooth; scroll-padding-top: 80px; /* Ativa a rolagem suave */ }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* Ativa a rolagem suave */
+  @include mobile-tablet {
+    scroll-padding-top: 0;
+  }
+}
 
 .align-wrapper {
   & > .text {
