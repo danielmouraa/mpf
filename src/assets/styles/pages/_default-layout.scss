@@ -145,8 +145,7 @@ header {
   .align-wrapper {
     padding: 0;
     @include mobile-tablet {
-      padding-top: 30px;
-      padding-bottom: 30px;
+      padding: 30px clamp(30px, 3.91%, 30px) !important;
       justify-content: flex-start;
       align-items: flex-start;
       gap: 50px;
