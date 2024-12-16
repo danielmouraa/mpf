@@ -1,8 +1,239 @@
-$font-family: Helvetica, sans-serif !default;
-$font-size: 16px !default;
+// App font: load your font
+//@use '@styles/base/fonts/proximanova' as font;
+@import '@styles/abstracts/_mixins.scss';
+
+$font-size: 1.6rem !default;
+
+/* Class for Proxima Nova Condensed Light Italic */
+.proxima-nova-cn-lt {
+  font-family: 'Proxima Nova Cn Lt';
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Class for Proxima Nova Light Italic */
+.proxima-nova-lt {
+  font-family: 'Proxima Nova Lt';
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Class for Proxima Nova Condensed Regular */
+.proxima-nova-cn-rg {
+  font-family: 'Proxima Nova Cn Rg';
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Class for Proxima Nova Extrabold */
+.proxima-nova-th {
+  font-family: 'Proxima Nova Th';
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* Class for Proxima Nova Condensed Black */
+.proxima-nova-cn-bl {
+  font-family: 'Proxima Nova Cn Bl';
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Class for Proxima Nova Condensed Extrabold Italic */
+.proxima-nova-cn-th {
+  font-family: 'Proxima Nova Cn Th';
+  font-weight: 800;
+  font-style: italic;
+}
+
+/* Class for Proxima Nova Regular */
+.proxima-nova-rg {
+  font-family: 'Proxima Nova Rg';
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Class for Proxima Nova Semibold */
+.proxima-nova-semibold {
+  font-family: 'Proxima Nova Lt';
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Class for Proxima Nova Extra Condensed Thin */
+.proxima-nova-excn-th {
+  font-family: 'Proxima Nova ExCn Th';
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* Class for Proxima Nova Condensed Semibold */
+.proxima-nova-cn-semibold {
+  font-family: 'Proxima Nova Cn Lt';
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Class for Proxima Nova Extra Condensed Semibold Italic */
+.proxima-nova-excn-semibold-it {
+  font-family: 'Proxima Nova ExCn Lt';
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Class for Proxima Nova Thin Italic */
+.proxima-nova-thin-it {
+  font-family: 'Proxima Nova Th';
+  font-weight: 100;
+  font-style: italic;
+}
+
+/* Class for Proxima Nova Condensed Thin */
+.proxima-nova-cn-thin {
+  font-family: 'Proxima Nova Cn Th';
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* Class for Proxima Nova Condensed Regular Italic */
+.proxima-nova-cn-rg-it {
+  font-family: 'Proxima Nova Cn Rg';
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Class for Proxima Nova Extra Condensed Thin Italic */
+.proxima-nova-excn-th-it {
+  font-family: 'Proxima Nova ExCn Th';
+  font-weight: 100;
+  font-style: italic;
+}
+
+/* Class for Proxima Nova Semibold Italic */
+.proxima-nova-semibold-it {
+  font-family: 'Proxima Nova Lt';
+  font-weight: 600;
+  font-style: italic;
+}
+
+/* Class for Proxima Nova Regular Italic */
+.proxima-nova-rg-it {
+  font-family: 'Proxima Nova Rg';
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* Class for Proxima Nova Condensed Extrabold */
+.proxima-nova-cn-extrabld {
+  font-family: 'Proxima Nova Cn Th';
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* Class for Proxima Nova Extra Condensed Extrabold Italic */
+.proxima-nova-excn-extrabld-it {
+  font-family: 'Proxima Nova ExCn Th';
+  font-weight: 800;
+  font-style: italic;
+}
+
+/* Class for Proxima Nova Extra Condensed Black Italic */
+.proxima-nova-excn-bl-it {
+  font-family: 'Proxima Nova ExCn Bl';
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* Class for Proxima Nova Extra Condensed Light Italic */
+.proxima-nova-excn-light-it {
+  font-family: 'Proxima Nova ExCn Lt';
+  font-weight: 300;
+  font-style: italic;
+}
+
+/* Class for Proxima Nova Condensed Thin Italic */
+.proxima-nova-cn-thin-it {
+  font-family: 'Proxima Nova Cn Th';
+  font-weight: 100;
+  font-style: italic;
+}
+
+/* Class for Proxima Nova Extra Condensed Light */
+.proxima-nova-excn-light {
+  font-family: 'Proxima Nova ExCn Lt';
+  font-weight: 300;
+  font-style: normal;
+}
+
+/* Class for Proxima Nova Condensed Bold Italic */
+.proxima-nova-cn-bold-it {
+  font-family: 'Proxima Nova Cn Rg';
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Class for Proxima Nova Extra Condensed Extrabold */
+.proxima-nova-excn-extrabld {
+  font-family: 'Proxima Nova ExCn Th';
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* Class for Proxima Nova Extra Condensed Bold Italic */
+.proxima-nova-excn-bold-it {
+  font-family: 'Proxima Nova ExCn Rg';
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Class for Proxima Nova Black */
+.proxima-nova-bl {
+  font-family: 'Proxima Nova Bl';
+  font-weight: 900;
+  font-style: normal;
+}
+
+/* Class for Proxima Nova Bold */
+.proxima-nova-bold {
+  font-family: 'Proxima Nova Rg';
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Class for Proxima Nova Extra Condensed Bold */
+.proxima-nova-excn-bold {
+  font-family: 'Proxima Nova ExCn Rg';
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Class for Proxima Nova Thin */
+.proxima-nova-thin {
+  font-family: 'Proxima Nova Th';
+  font-weight: 100;
+  font-style: normal;
+}
+
+/* Class for Proxima Nova Bold Italic */
+.proxima-nova-bold-it {
+  font-family: 'Proxima Nova Rg';
+  font-weight: bold;
+  font-style: italic;
+}
+
+/* Class for Proxima Nova Medium */
+.proxima-nova-md {
+  font-family: 'Proxima Nova Md';
+  font-weight: 500;
+  font-style: normal;
+}
+
+html {
+  font-size: 62.5%; /* 62.5% of 16px = 10px, making 1rem = 10px */
+}
 
 body {
-  font-family: $font-family;
+  font-family: 'Proxima Nova Rg', sans-serif;
   font-size: $font-size;
 }
 

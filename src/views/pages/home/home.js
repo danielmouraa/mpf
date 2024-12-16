@@ -238,6 +238,7 @@ $(document).ready(function() {
 
       allOptions.forEach((option, index) => {
         const button = document.createElement("button");
+        button.setAttribute('class', 'proxima-nova-md');
         button.textContent = option;
         button.addEventListener("click", () => selectAnswer(option, currentQuiz.correct_answer));
         optionsElement.appendChild(button);

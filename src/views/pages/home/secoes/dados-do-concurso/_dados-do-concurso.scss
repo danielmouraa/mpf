@@ -101,6 +101,10 @@ $cor-por-ramo: #73ade0;
             font-weight: bold;
             cursor: pointer;
 
+            body.contraste & {
+              color: $contraste-font-color;
+            }
+
             &:before {
               transition: all ease-in-out .2s;
               content: "";
@@ -153,7 +157,7 @@ $cor-por-ramo: #73ade0;
           &.inscritos {
             li {
               i:before {
-                color: $cor-inscritos;
+                color: $cor-inscritos !important;
               }
             }
           }
@@ -161,7 +165,7 @@ $cor-por-ramo: #73ade0;
           &.candidatos {
             li:nth-child(-n+151) {
               i:before {
-                color: $cor-candidatos;
+                color: $cor-candidatos !important;
               }
             }
           }
@@ -169,7 +173,7 @@ $cor-por-ramo: #73ade0;
           &.aprovados {
             li:nth-child(-n+22) {
               i:before {
-                color: $cor-aprovados;
+                color: $cor-aprovados !important;
               }
             }
           }
@@ -177,7 +181,7 @@ $cor-por-ramo: #73ade0;
           &.nomeados {
             li:nth-child(-n+4) {
               i:before {
-                color: $cor-nomeados;
+                color: $cor-nomeados !important;
               }
             }
           }
@@ -185,7 +189,7 @@ $cor-por-ramo: #73ade0;
           &.por-ramo {
             li:nth-child(-n+1) {
               i:before {
-                color: $cor-por-ramo;
+                color: $cor-por-ramo !important;
               }
             }
           }
@@ -286,6 +290,10 @@ $cor-por-ramo: #73ade0;
               left: 30px;
               top: 50%;
               transform: translateX(-100%) translateY(-50%);
+
+              body.contraste & {
+                color: $contraste-font-color;
+              }
             }
           }
 
@@ -325,6 +333,10 @@ $cor-por-ramo: #73ade0;
                 padding-bottom: 20px;
                 margin-bottom: 20px;
                 border-bottom: 1px solid #7f2a7e;
+
+                body.contraste & {
+                  border-color: $contraste-font-color;
+                }
 
                 h3 {
                   margin: 0;

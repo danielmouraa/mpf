@@ -118,7 +118,7 @@
       color: #fff;
 
       body.contraste & {
-        border-bottom: 1px solid $contraste-font-color;
+        //border-bottom: 1px solid $contraste-font-color;
       }
 
       .resultado {
@@ -186,13 +186,26 @@
     padding: 12px 20px;
     margin: 8px 0;
     color: #FFF;
-    font-size: 1rem;
+    font-size: 1.6rem;
     cursor: pointer;
     transition: all 0.3s ease;
     outline: none;
     text-align: left;
     background: #333380;
     border-radius: 0px !important;
+
+    body.contraste & {
+      border-color: $contraste-font-color;
+      background: none;
+
+      &.correct {
+        background-color: #076700;
+      }
+
+      &.wrong {
+        background-color: #af2222;
+      }
+    }
   }
 
   #options button.correct {
@@ -208,7 +221,7 @@
   /* Button Styles */
   button {
     transition: all ease-in-out .2s;
-    font-size: 1rem;
+    font-size: 1.6rem;
     padding: 10px 20px;
     background-color: #333380;
     color: #fff;
@@ -217,6 +230,7 @@
     cursor: pointer;
 
     body.contraste & {
+      background: none;
       border-color: $contraste-font-color;
     }
   }

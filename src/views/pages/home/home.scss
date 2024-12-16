@@ -1,4 +1,5 @@
 @use '@styles/main.scss';
+
 @use '@pages/home/secoes/inicio/_inicio.scss';
 @use '@pages/home/secoes/fazemos-diferenca/_fazemos-diferenca.scss';
 @use '@pages/home/secoes/novo-tempo/_novo-tempo.scss';
@@ -7,8 +8,8 @@
 @use '@pages/home/secoes/depoimentos/_depoimentos.scss';
 @use '@pages/home/secoes/dados-do-concurso/_dados-do-concurso.scss';
 @use '@pages/home/secoes/questoes-da-prova/_questoes-da-prova.scss';
-@import '@styles/abstracts/_mixins.scss';
 @import '@styles/abstracts/_variables.scss';
+@import '@styles/abstracts/_mixins.scss';
 
 
 html { scroll-behavior: smooth; scroll-padding-top: 80px; /* Ativa a rolagem suave */ }
