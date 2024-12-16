@@ -405,10 +405,25 @@ $(document).ready(function() {
     });
   }
 
+
+
   // Setup custom controls (play, pause, seek bar, etc.)
   function setupCustomControls(player) {
     const playButton = document.getElementById('play-button');
     const pauseButton = document.getElementById('pause-button');
+
+    $('#inicio').on('click', () => {
+      const playerState = player.getPlayerState();
+
+      if (playerState === YT.PlayerState.PLAYING) {
+        player.pauseVideo();
+      }
+
+      if (playerState === YT.PlayerState.PAUSED) {
+        player.playVideo();
+      }
+    });
+
     // Play video
     playButton.addEventListener('click', () => {
       player.playVideo();
