@@ -58,13 +58,13 @@ $cor-por-ramo: #73ade0;
       color: #434244;
 
       h2 {
-        font-size: 23px;
+        font-size: 2.3rem;
         margin: 0 0 30px;
       }
 
       p {
         display: block;
-        font-size: 18px;
+        font-size: 1.8rem;
         margin: 0 0 15px;
 
         strong {
@@ -76,7 +76,7 @@ $cor-por-ramo: #73ade0;
     #grafico-vagas {
       .instrucao {
         color: #7d2b8a;
-        font-size: 14px;
+        font-size: 1.4rem;
         display: block;
         margin-bottom: 15px;
         font-weight: bold;
@@ -96,7 +96,7 @@ $cor-por-ramo: #73ade0;
             padding: 0 0 0 25px;
             position: relative;
             margin-bottom: 15px;
-            font-size: 14px;
+            font-size: 1.4rem;
             color: #434244;
             font-weight: bold;
             cursor: pointer;
@@ -236,7 +236,7 @@ $cor-por-ramo: #73ade0;
             }
 
             h3 {
-              font-size: 50px;
+              font-size: 5.0rem;
               color: #333380;
               display: block;
               margin: 0 0 20px;
@@ -244,7 +244,7 @@ $cor-por-ramo: #73ade0;
             }
 
             strong {
-              font-size: 50px;
+              font-size: 5.0rem;
               display: block;
               margin: 0;
               line-height: normal;
@@ -252,7 +252,7 @@ $cor-por-ramo: #73ade0;
 
             span {
               display: block;
-              font-size: 25px;
+              font-size: 2.5rem;
               margin: 0;
               line-height: normal;
             }
@@ -274,7 +274,7 @@ $cor-por-ramo: #73ade0;
           width: 500px;
 
           .instrucao {
-            font-size: 34px;
+            font-size: 3.4rem;
             color: #7d2b8a;
             display: block;
             padding-left: 60px;
@@ -340,12 +340,12 @@ $cor-por-ramo: #73ade0;
 
                 h3 {
                   margin: 0;
-                  font-size: 34px;
+                  font-size: 3.4rem;
                   line-height: normal;
                 }
 
                 span {
-                  font-size: 20px;
+                  font-size: 2.0rem;
                   position: relative;
 
                   &:before {
@@ -372,7 +372,7 @@ $cor-por-ramo: #73ade0;
 
                 span {
                   display: block;
-                  font-size: 18px;
+                  font-size: 1.8rem;
                 }
               }
             }
@@ -392,7 +392,7 @@ $cor-por-ramo: #73ade0;
 
         h3 {
           margin: 0;
-          font-size: 30px;
+          font-size: 3.0rem;
           color: #333380;
           margin-bottom: 10px;
           line-height: normal;
@@ -400,7 +400,7 @@ $cor-por-ramo: #73ade0;
 
         span {
           color: #7d2b8a;
-          font-size: 16px;
+          font-size: 1.6rem;
           display: block;
           line-height: normal;
         }
@@ -420,11 +420,11 @@ $cor-por-ramo: #73ade0;
           gap: 19px;
 
           strong {
-            font-size: 23px;
+            font-size: 2.3rem;
           }
 
           span {
-            font-size: 18px;
+            font-size: 1.8rem;
             font-weight: bold;
           }
         }
@@ -578,7 +578,7 @@ $cor-por-ramo: #73ade0;
 
             strong {
               transition: all ease-in-out .2s;
-              font-size: 23px;
+              font-size: 2.3rem;
             }
 
             .bullet {
@@ -592,7 +592,7 @@ $cor-por-ramo: #73ade0;
 
             span {
               transition: all ease-in-out .2s;
-              font-size: 18px;
+              font-size: 1.8rem;
               font-weight: bold;
             }
           }
@@ -682,12 +682,12 @@ $cor-por-ramo: #73ade0;
               }
 
               span {
-                font-size: 30px;
+                font-size: 3.0rem;
                 line-height: normal;
               }
 
               strong {
-                font-size: 50px;
+                font-size: 5.0rem;
                 line-height: normal;
               }
             }
@@ -697,7 +697,7 @@ $cor-por-ramo: #73ade0;
       }
 
       .fonte {
-        font-size: 12px;
+        font-size: 1.2rem;
       }
     }
   }
@@ -732,14 +732,14 @@ $cor-por-ramo: #73ade0;
     display: none;
     fill: #fff;
     font-family: Arial;
-    font-size: 11px;
+    font-size: 1.1rem;
     line-height: 12px;
     font-weight: normal;
   }
   #map .state .label_state {
     display: none;
     font-family: Arial;
-    font-size: 14px;
+    font-size: 1.4rem;
     line-height: 16px;
     font-weight: bold;
   }

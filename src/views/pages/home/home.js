@@ -441,6 +441,10 @@ $(document).ready(function() {
 
 
   // ==================================== ACESSIBILIDADE =================================== //
+  // Set the initial base font size
+  let fontSize = 62.5; // 100% of the default font size
+  const maxFontSize = 75; // 200% of the base font size (example)
+  const html = document.documentElement;
 
   $('#accessibility button').on('click', function() {
     var action = $(this).data('action');
@@ -453,10 +457,16 @@ $(document).ready(function() {
         console.log('disabled')
         break;
       case 'font-plus':
-        console.log('font-plus')
+        if (fontSize < maxFontSize) {
+          fontSize += 1; // Increase font size by 1%
+          html.style.fontSize = fontSize + '%';
+        }
         break;
       case 'font-minus':
-        console.log('font-minus')
+        if (fontSize > 62.5) { // Set a minimum font size (e.g., 50%)
+          fontSize -= 1; // Decrease font size by 1%
+          html.style.fontSize = fontSize + '%';
+        }
         break;
       case 'contrast':
         $('body').toggleClass('contraste');

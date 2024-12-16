@@ -230,6 +230,7 @@ $font-size: 1.6rem !default;
 
 html {
   font-size: 62.5%; /* 62.5% of 16px = 10px, making 1rem = 10px */
+  transition: font-size ease-in-out .2s;
 }
 
 body {
@@ -269,38 +270,38 @@ h6, .h6,
 
 h1, .h1 {
   font-weight: $_head-font-weight;
-  font-size: 32px;
-  line-height: 40px;
+  font-size: 3.2rem;
+  line-height: normal;
 }
 
 h2, .h2 {
   font-weight: $_head-font-weight;
-  font-size: 24px;
-  line-height: 30px;
+  font-size: 2.4rem;
+  line-height: normal;
 }
 
 h3, .h3 {
   font-weight: $_head-font-weight;
-  font-size: 20px;
-  line-height: 25px;
+  font-size: 2.0rem;
+  line-height: normal;
 }
 
 h4, .h4 {
   font-weight: $_head-font-weight;
-  font-size: 16px;
-  line-height: 20px;
+  font-size: 1.6rem;
+  line-height: normal;
 }
 
 h5, .h5 {
   font-weight: $_head-font-weight;
-  font-size: 14px;
-  line-height: 18px;
+  font-size: 1.4rem;
+  line-height: normal;
 }
 
 h6, .h6 {
   font-weight: $_head-font-weight;
-  font-size: 13.7px;
-  line-height: 18px;
+  font-size: 13rem;
+  line-height: normal;
   color: #6a737d;
 }
 
@@ -308,14 +309,14 @@ h6, .h6 {
 $_subline-font-weight: normal;
 .s1 {
   font-weight: $_subline-font-weight;
-  font-size: 32px;
-  line-height: 40px;
+  font-size: 3.2rem;
+  line-height: normal;
 }
 
 .s2 {
   font-weight: $_subline-font-weight;
-  font-size: 24px;
-  line-height: 30px;
+  font-size: 2.4rem;
+  line-height: normal;
 }
 
 .s3 {
