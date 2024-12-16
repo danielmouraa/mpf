@@ -195,11 +195,15 @@ $cor-por-ramo: #73ade0;
 
         .icones {
           display: grid;
-          grid-template-columns: 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px;
+          grid-template-columns: 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px;
           gap: 1px;
           list-style: none;
           margin: 0;
           padding: 0;
+
+          @include mobile-tablet {
+            grid-template-columns: 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px;
+          }
 
           i:before {
             color: #b3b3b3;

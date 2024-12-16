@@ -11,6 +11,12 @@ body {
     }
   }
 
+  br {
+    @include mobile-tablet {
+      display: none;
+    }
+  }
+
   .align-wrapper {
     width: 100%;
     max-width: 1280px;
@@ -37,6 +43,7 @@ body {
   }
 
   .align-wrapper {
+    padding: 0;
     @include mobile-tablet {
       padding: 0 clamp(30px, 3.91%, 50px);
     }
@@ -74,11 +81,16 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 50px 0;
   background: #333380;
 
   body.contraste & {
     background: $contraste-background-color;
+  }
+
+  .menu-open {
+    i:before {
+      color: #FFF;
+    }
   }
 
   h1 {
@@ -131,6 +143,7 @@ header {
   }
 
   .align-wrapper {
+    padding: 0;
     @include mobile-tablet {
       padding-top: 30px;
       padding-bottom: 30px;
