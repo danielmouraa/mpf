@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlBundlerPlugin = require('html-bundler-webpack-plugin');
 const webpack = require('webpack'); // Import webpack for ProvidePlugin
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const isProd = !process.argv.find((str) => str.includes('development'));
 
@@ -28,6 +29,14 @@ module.exports = {
   },
 
   plugins: [
+    new CopyWebpackPlugin({
+      patterns: [
+        {
+          from: path.resolve(__dirname, 'src/assets/docs'),
+          to: path.resolve(__dirname, 'dist/assets/docs'),
+        },
+      ],
+    }),
 
     new HtmlBundlerPlugin({
       // verbose: 'auto', // output information about the process to console in development mode only

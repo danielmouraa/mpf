@@ -57,9 +57,39 @@ $cor-por-ramo: #73ade0;
       margin-bottom: 20px;
       color: #434244;
 
-      h2 {
-        font-size: 2.3rem;
+      .cabecalho {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 50px;
         margin: 0 0 30px;
+
+
+        h2 {
+          font-size: 4rem;
+          margin: 0;
+        }
+
+        .actions {
+          a {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            color: #FFF;
+            font-weight: bold;
+            font-size: 1.8rem;
+            color: #000;
+            text-decoration: none;
+
+            i:before {
+              font-size: 4.5rem;
+              color: #434244;
+            }
+          }
+        }
       }
 
       p {
@@ -274,26 +304,17 @@ $cor-por-ramo: #73ade0;
           width: 500px;
 
           .instrucao {
-            font-size: 3.4rem;
+            font-size: 3.2rem;
             color: #7d2b8a;
             display: block;
-            padding-left: 60px;
             position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
 
-            &:before {
-              content: "";
-              width: 54px;
-              height: 104px;
-              background: url("@images/arrow.png") no-repeat center top;
-              background-size: cover;
-              position: absolute;
-              left: 30px;
-              top: 50%;
-              transform: translateX(-100%) translateY(-50%);
-
-              body.contraste & {
-                color: $contraste-font-color;
-              }
+            i:before {
+              font-size: 95px;
             }
           }
 
@@ -758,43 +779,91 @@ $cor-por-ramo: #73ade0;
   #map .model-davi .state {
     &.primeira-regiao .active {
       fill: #4caee3 !important;
+
+      body.contraste & {
+        fill: $contraste-font-color !important;
+      }
     }
 
     &.segunda-regiao .active {
       fill: #578ef1 !important;
+
+      body.contraste & {
+        fill: $contraste-font-color !important;
+      }
     }
     &.terceira-regiao .active {
       fill: #942581 !important;
+
+      body.contraste & {
+        fill: $contraste-font-color !important;
+      }
     }
     &.quarta-regiao .active {
       fill: #ab679d !important;
+
+      body.contraste & {
+        fill: $contraste-font-color !important;
+      }
     }
     &.quinta-regiao .active {
       fill: #76bde8 !important;
+
+      body.contraste & {
+        fill: $contraste-font-color !important;
+      }
     }
     &.sexta-regiao .active {
       fill: #0071cd !important;
+
+      body.contraste & {
+        fill: $contraste-font-color !important;
+      }
     }
   }
 
   #map .model-davi .state:hover {
     &.primeira-regiao .shape, {
       fill: #4caee3 !important;
+
+      body.contraste & {
+        fill: $contraste-font-color !important;
+      }
     }
     &.segunda-regiao .shape {
       fill: #578ef1 !important;
+
+      body.contraste & {
+        fill: $contraste-font-color !important;
+      }
     }
     &.terceira-regiao .shape {
       fill: #942581 !important;
+
+      body.contraste & {
+        fill: $contraste-font-color !important;
+      }
     }
     &.quarta-regiao .shape {
       fill: #ab679d !important;
+
+      body.contraste & {
+        fill: $contraste-font-color !important;
+      }
     }
     &.quinta-regiao .shape {
       fill: #76bde8 !important;
+
+      body.contraste & {
+        fill: $contraste-font-color !important;
+      }
     }
     &.sexta-regiao .shape {
       fill: #0071cd !important;
+
+      body.contraste & {
+        fill: $contraste-font-color !important;
+      }
     }
   }
 

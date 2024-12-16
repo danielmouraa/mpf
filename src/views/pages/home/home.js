@@ -1,5 +1,9 @@
 import 'owl.carousel';
 
+// import myPDF from '@docs/myfile.pdf';
+
+console.log('@docs/myfile.pdf');
+
 export function loadYouTubeApi() {
   return new Promise((resolve) => {
     if (window.YT && window.YT.Player) {
@@ -317,23 +321,35 @@ $(document).ready(function() {
 
   var modal = $('#myModal');
   var span = $('.close');
-  var video = $('#video');
+  var iframe = $('#iframe');
 
-  $('.open-modal').click(function() {
-    var videoUrl = $(this).data('video');
-    video.attr('src', videoUrl);
+  function openModal(url) {
+    iframe.attr('src', url);
     modal.show();
+    $('body').css('overflow', 'hidden');
+  }
+
+  $('.open-pdf').click(function(e) {
+    openModal($(this).attr('href'));
+    e.preventDefault();
+  });
+
+  $('.open-modal').click(function(e) {
+    openModal($(this).data('video'));
+    e.preventDefault();
   });
 
   span.click(function() {
     modal.hide();
-    video.attr('src', '');
+    iframe.attr('src', '');
+    $('body').css('overflow', 'auto');
   });
 
   $(window).click(function(event) {
     if (event.target == modal[0]) {
       modal.hide();
-      video.attr('src', '');
+      iframe.attr('src', '');
+      $('body').css('overflow', 'auto');
     }
   });
 

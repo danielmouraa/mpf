@@ -11,24 +11,52 @@
     padding: 50px 0;
   }
 
-  .text {
-    p{
-      color: #f5f5f5;
-      display: flex;
-      align-items: center;
-      flex-direction: row;
-      gap: 10px;
-      margin-bottom: 30px;
+  .cabecalho {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
 
-      i:before {
-        font-size: 2.5rem;
+    .text {
+      p{
+        color: #f5f5f5;
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 10px;
+        margin-bottom: 30px;
+
+        i:before {
+          font-size: 2.5rem;
+        }
+      }
+      h2{
+        color: #f5f5f5;
+        margin: 0;
       }
     }
-    h2{
-      color: #f5f5f5;
-      margin-bottom: 10px;
+
+    .actions {
+      a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        color: #FFF;
+        font-weight: bold;
+        font-size: 2.2rem;
+        color: #FFF;
+        text-decoration: none;
+
+        i:before {
+          font-size: 56px;
+        }
+      }
     }
   }
+
 
   .slides {
     margin: 0;
@@ -67,18 +95,24 @@
       }
 
       &:nth-child(even) {
-        margin-top: 83px;
-        //transform: translateY(17.7%);
+        margin-top: 153px;
 
         .bullet {
           order: 2;
         }
+
         .data {
           order: 3;
         }
+
         .preview {
           order: 4;
+
+          button {
+            order: 2;
+          }
         }
+
         .etapa {
           order: 1;
           border-top: none;
@@ -92,15 +126,54 @@
         position: relative;
         z-index: 1;
         transition: all ease-in-out .2s;
+        background: #7d2b8a;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
 
-        &:hover {
-          box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        body.contraste & {
+          background: $contraste-background-color;
+        }
+
+        button {
+          width: 50px;
+          height: 50px;
+          background: rgba(245, 245, 245, .2);
+          transition: all ease-in-out .2s;
+
+          body.contraste & {
+            background: rgba(0, 0, 0, .2);
+          }
+
+          i:before {
+            color: #FFF;
+            transition: all ease-in-out .2s;
+          }
+
+          &:hover,
+          &:focus {
+            background: rgba(245, 245, 245, 1);
+
+            body.contraste & {
+              background: rgba(0, 0, 0, 1);
+            }
+
+            i:before {
+              color: #7d2b8a;
+            }
+          }
         }
 
         a{
           width: 100%;
           overflow: hidden;
           display: block;
+
+          &:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+          }
 
           img {
             display: block;
@@ -112,7 +185,10 @@
 
       .data {
         width: 100%;
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         background: #a3d0f0;
         padding: 10px 20px;
         border-radius: 50px;
@@ -123,6 +199,7 @@
         position: relative;
         z-index: 1;
         font-weight: bold;
+        height: 44px;
 
         body.contraste & {
           background: $contraste-background-color;
@@ -169,7 +246,7 @@
       }
 
       .etapa {
-        height: 230px;
+        height: 234px;
         display: flex;
         flex-direction: column;
         gap: 20px;
