@@ -25,22 +25,24 @@ $icons: (
   disabled: "\e907",
   download: "\e908",
   facebook: "\e909",
-  instagram: "\e90a",
-  libras: "\e90b",
-  linkedin: "\e90c",
-  lupa: "\e90d",
-  menu: "\e90e",
-  minus-font: "\e90f",
-  pause: "\e910",
-  play: "\e911",
-  play-round: "\e912",
-  plus-font: "\e913",
-  profile: "\e914",
-  reverse: "\e915",
-  twitter: "\e916",
-  whatsapp: "\e917",
-  youtube: "\e918"
+  fullscreen: "\e90a",
+  instagram: "\e90b",
+  libras: "\e90c",
+  linkedin: "\e90d",
+  lupa: "\e90e",
+  menu: "\e90f",
+  minus-font: "\e910",
+  pause: "\e911",
+  play: "\e912",
+  play-round: "\e913",
+  plus-font: "\e914",
+  profile: "\e915",
+  reverse: "\e916",
+  twitter: "\e917",
+  whatsapp: "\e918",
+  youtube: "\e919"
 );
+
 
 @each $name, $content in $icons {
   .icon-#{$name}:before {

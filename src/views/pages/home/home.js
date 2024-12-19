@@ -1,43 +1,25 @@
 import 'owl.carousel';
 
-// import myPDF from '@docs/myfile.pdf';
-
-console.log('@docs/myfile.pdf');
-
-export function loadYouTubeApi() {
-  return new Promise((resolve) => {
-    if (window.YT && window.YT.Player) {
-      resolve(window.YT); // API already loaded
-      return;
-    }
-
-    const script = document.createElement('script');
-    script.src = 'https://www.youtube.com/iframe_api';
-    document.head.appendChild(script);
-
-    window.onYouTubeIframeAPIReady = () => {
-      resolve(window.YT);
-    };
-  });
-}
 
 $(document).ready(function() {
   let mouseEnterTimeout;
 
-  const viewWidth = window.outerWidth;
+  const viewWidth = window.innerWidth;
 
   $('#depoimentos .owl-carousel').owlCarousel({
     center: false,
-    loop:false,
-    items: (viewWidth > 1280) ? 2 : 1,
-    margin:30
+    loop: false,
+    items: (viewWidth >= 1280) ? 2 : 1,
+    margin: 30
   });
 
   $('#dados-do-concurso .owl-carousel').owlCarousel({
     center: true,
     loop:false,
     items:1,
-    margin:30
+    nav: true,
+    margin:30,
+    navText: ['<button type="button" class="nav-prev"><i class="icon-arrow-left"></i></button>', '<button type="button" class="nav-next"><i class="icon-arrow-right"></i></button>']
   });
 
   if (viewWidth < 1280) {
@@ -47,6 +29,10 @@ $(document).ready(function() {
       items:1,
     });
   }
+
+  $('#menu a').on('click', function() {
+    $('#menu').removeClass('active');
+  });
 
   $('#timeline-concursos .timeline li').on('click mouseenter', function() {
     clearTimeout(mouseEnterTimeout); // Clear any existing timer
@@ -59,12 +45,12 @@ $(document).ready(function() {
 
       $('#timeline-concursos .conteudo .item:visible').each((i, $el) => {
         if ($($el).attr('id') !== content.replaceAll('#', '')) {
-          $($el).fadeOut(200, () => {
-            $(content).fadeIn(200);
+          $($el).fadeOut(0, () => {
+            $(content).fadeIn(0);
           });
         }
       });
-    }, 200);
+    }, 0);
   });
 
   $('#map .state').on('click mouseenter', function() {
@@ -78,12 +64,12 @@ $(document).ready(function() {
 
       $('.content-regiao:visible').each((i, $el) => {
         if ($($el).attr('id') !== regiao) {
-          $($el).fadeOut(200, () => {
-            $regiao_element.fadeIn(200);
+          $($el).fadeOut(0, () => {
+            $regiao_element.fadeIn(0);
           });
         }
       });
-    }, 200);
+    }, 0);
 
   });
 
@@ -97,7 +83,7 @@ $(document).ready(function() {
   });
 
   $('.card .reverse').on('click', function() {
-    $(this).parents('.card-inner').addClass('active');
+    $(this).parents('.card-inner').toggleClass('active');
   });
 
   // ==================================== QUIZ ==================================== //
@@ -112,7 +98,8 @@ $(document).ready(function() {
   const optionsElement = document.getElementById("options");
   const nextButton = document.getElementById("next-button");
   const backButton = document.getElementById("back-button");
-  const devolutiva = document.getElementById("devolutiva");
+  const actions = document.getElementById("questions-options");
+
   const questions = [
     {
       "question": "O tema central do fragmento ao lado é:",
@@ -243,6 +230,7 @@ $(document).ready(function() {
   // Load the current question
   function loadQuestion() {
     if (currentQuestion < shuffledQuestions.length) {
+      actions.classList.remove("hidden");
       const currentQuiz = shuffledQuestions[currentQuestion];
       questionElement.innerHTML = '<span class="index">' + (currentQuestion + 1) + '</span>' + '<div><span class="enunciado">' + currentQuiz.question + '</span></div>';
       optionsElement.innerHTML = "";
@@ -275,7 +263,7 @@ $(document).ready(function() {
 
       nextButton.classList.add("hidden");
       backButton.classList.add("hidden");
-      devolutiva.classList.add("hidden");
+      actions.classList.add("hidden");
       restartButton.classList.remove("hidden");
     }
   }
@@ -369,7 +357,7 @@ $(document).ready(function() {
   // ==================================== GRAFICO INSCRITOS =================================== //
 
   $('#grafico-vagas .labels li').on('click mouseenter', function() {
-    var delay = 200;
+    var delay = 0;
 
     clearTimeout(mouseEnterTimeout); // Clear any existing timer
     mouseEnterTimeout = setTimeout(() => {
@@ -395,7 +383,26 @@ $(document).ready(function() {
 
   // ==================================== DESTAQUE YOUTUBE =================================== //
 
+
   const videoId = 'nM2gpgEDFZo'; // Replace with your YouTube video ID
+
+  function loadYouTubeApi() {
+    return new Promise((resolve) => {
+      if (window.YT && window.YT.Player) {
+        resolve(window.YT); // API already loaded
+        return;
+      }
+
+      const script = document.createElement('script');
+      script.src = 'https://www.youtube.com/iframe_api';
+      document.head.appendChild(script);
+
+      window.onYouTubeIframeAPIReady = () => {
+        resolve(window.YT);
+      };
+    });
+  }
+
   let player;
 
   // Initialize the YouTube API and create the player
@@ -437,8 +444,9 @@ $(document).ready(function() {
   function setupCustomControls(player) {
     const playButton = document.getElementById('play-button');
     const pauseButton = document.getElementById('pause-button');
+    const fullscreen = document.getElementById('fullscreen-button');
 
-    $('#inicio').on('click', () => {
+    $('#custom-video-container').on('click', () => {
       const playerState = player.getPlayerState();
 
       if (playerState === YT.PlayerState.PLAYING) {
@@ -458,6 +466,57 @@ $(document).ready(function() {
     // Pause video
     pauseButton.addEventListener('click', () => {
       player.pauseVideo();
+    });
+
+    // Fullscreen video
+    fullscreen.addEventListener('click', () => {
+      const iframe = document.getElementById('youtube-player');
+
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      } else if (iframe.mozRequestFullScreen) { // Firefox
+        iframe.mozRequestFullScreen();
+      } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, Opera
+        iframe.webkitRequestFullscreen();
+      } else if (iframe.msRequestFullscreen) { // IE/Edge
+        iframe.msRequestFullscreen();
+      }
+    });
+
+    // EXIT FULLSCREEN
+
+    const enterFullscreen = function() {
+      document.body.classList.add('fullscreen');
+      player.unMute();
+    }
+
+    const exitFullscreen = function() {
+      player.mute();
+      document.body.classList.remove('fullscreen');
+    }
+
+    document.addEventListener('fullscreenchange', () => {
+      if (document.fullscreenElement) {
+        enterFullscreen();
+      } else {
+        exitFullscreen();
+      }
+    });
+
+    // Add vendor-prefixed events for better compatibility
+    document.addEventListener('mozfullscreenchange', () => {
+      document.fullscreenElement ?
+        enterFullscreen() : exitFullscreen();
+    });
+
+    document.addEventListener('webkitfullscreenchange', () => {
+      document.fullscreenElement ?
+        enterFullscreen() : exitFullscreen();
+    });
+
+    document.addEventListener('msfullscreenchange', () => {
+      document.fullscreenElement ?
+        enterFullscreen() : exitFullscreen();
     });
   }
 

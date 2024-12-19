@@ -20,6 +20,42 @@ $cor-por-ramo: #73ade0;
   }
 
   .owl-carousel {
+    position: relative;
+
+    .owl-nav {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      pointer-events: none;
+      margin-top: -40px;
+
+      button {
+        pointer-events: all;
+        justify-content: space-between;
+        margin: 0;
+
+        &.owl-prev {
+          transform: translateX(calc(-100% - 5px));
+        }
+
+        &.owl-next {
+          transform: translateX(calc(100% + 5px));
+        }
+
+        &:hover {
+          background: none;
+        }
+
+        i:before {
+          font-size: 3rem;
+        }
+      }
+    }
+
     .owl-stage {
       display: flex;
       flex-direction: row;
@@ -69,6 +105,7 @@ $cor-por-ramo: #73ade0;
         align-items: center;
         margin-bottom: 50px;
         margin: 0 0 30px;
+        gap: 30px;
 
         @include mobile-tablet {
           flex-direction: column;
@@ -96,6 +133,12 @@ $cor-por-ramo: #73ade0;
             font-size: 1.8rem;
             color: #000;
             text-decoration: none;
+
+            &:hover {
+              span {
+                text-decoration: underline;
+              }
+            }
 
             i:before {
               font-size: 4.5rem;
@@ -158,7 +201,7 @@ $cor-por-ramo: #73ade0;
             }
 
             &:before {
-              transition: all ease-in-out .2s;
+              //transition: all ease-in-out .2s;
               content: "";
               width: 15px;
               height: 15px;
@@ -170,25 +213,29 @@ $cor-por-ramo: #73ade0;
               transform: translateY(-50%);
             }
 
-            &[data-categoria="inscritos"]:before {
-              background: $cor-inscritos;
+            &:hover {
+              &[data-categoria="inscritos"]:before {
+                background: $cor-inscritos;
+              }
+
+              &[data-categoria="candidatos"]:before {
+                background: $cor-candidatos;
+              }
+
+              &[data-categoria="aprovados"]:before {
+                background: $cor-aprovados;
+              }
+
+              &[data-categoria="nomeados"]:before {
+                background: $cor-nomeados;
+              }
+
+              &[data-categoria="por-ramo"]:before {
+                background: $cor-por-ramo;
+              }
             }
 
-            &[data-categoria="candidatos"]:before {
-              background: $cor-candidatos;
-            }
 
-            &[data-categoria="aprovados"]:before {
-              background: $cor-aprovados;
-            }
-
-            &[data-categoria="nomeados"]:before {
-              background: $cor-nomeados;
-            }
-
-            &[data-categoria="por-ramo"]:before {
-              background: $cor-por-ramo;
-            }
           }
 
         }
@@ -207,7 +254,7 @@ $cor-por-ramo: #73ade0;
 
           i:before {
             color: #b3b3b3;
-            transition: all ease-in-out .2s;
+            //transition: all ease-in-out .2s;
           }
 
           li:nth-child(156) ~ li {
@@ -406,6 +453,7 @@ $cor-por-ramo: #73ade0;
                 padding-bottom: 20px;
                 margin-bottom: 20px;
                 border-bottom: 1px solid #7f2a7e;
+                gap: 30px;
 
                 body.contraste & {
                   border-color: $contraste-font-color;
@@ -671,12 +719,12 @@ $cor-por-ramo: #73ade0;
             }
 
             strong {
-              transition: all ease-in-out .2s;
+              //transition: all ease-in-out .2s;
               font-size: 2.3rem;
             }
 
             .bullet {
-              transition: all ease-in-out .2s;
+              //transition: all ease-in-out .2s;
               width: 11px;
               height: 11px;
               display: block;
@@ -685,7 +733,7 @@ $cor-por-ramo: #73ade0;
             }
 
             span {
-              transition: all ease-in-out .2s;
+              //transition: all ease-in-out .2s;
               font-size: 1.8rem;
               font-weight: bold;
             }
@@ -988,11 +1036,11 @@ $cor-por-ramo: #73ade0;
     display: none;
   }
   #map .model-davi .state .shape{
-    -webkit-transition: all .2s ease-in-out;
-    -moz-transition: all .2s ease-in-out;
-    -ms-transition: all .2s ease-in-out;
-    -o-transition: all .2s ease-in-out;
-    transition: all .2s ease-in-out;
+    //-webkit-transition: all .2s ease-in-out;
+    //-moz-transition: all .2s ease-in-out;
+    //-ms-transition: all .2s ease-in-out;
+    //-o-transition: all .2s ease-in-out;
+    //transition: all .2s ease-in-out;
   }
   #map .model-davi .state:hover .shape {
     fill: #0288d1;

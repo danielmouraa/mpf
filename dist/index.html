@@ -13,7 +13,7 @@
   <!-- block for specific page styles -->
   
 <!-- load specific page style -->
-<link href="assets/css/home.3d541c98.css" rel="stylesheet">
+<link href="assets/css/home.3d360f10.css" rel="stylesheet">
 
 </head>
 <body>
@@ -32,9 +32,13 @@
 
 
   <!-- Header -->
-  <header>
+  <div id="menu-mobile" class="mobile-only">
     <div class="align-wrapper">
-        <button type="button" class="menu-open mobile-only"><i class="icon-menu"></i></button>
+        <button type="button" class="menu-open "><i class="icon-menu"></i></button>
+    </div>
+</div>
+<header>
+    <div class="align-wrapper">
         <div class="logo">
             <h1 id="logo">
                 <a title="1 concurso de servidores do MPU" href="index.html">
@@ -76,15 +80,19 @@
   </div>
 
   <div id="custom-controls">
+    <div class="spacer"></div>
+
     <button type="button" id="play-button" style="display: none;"><i class="icon-play"></i></button>
     <button type="button" id="pause-button"><i class="icon-pause"></i></button>
+    <div class="spacer"></div>
+    <button type="button" id="fullscreen-button"><i class="icon-fullscreen"></i></button>
   </div>
 </section>
 
 
 <section id="fazemos-diferenca">
   <div class="align-wrapper">
-    <button type="button" class="menu-open mobile-only"><i class="icon-menu"></i></button>
+<!--    <button type="button" class="menu-open mobile-only"><i class="icon-menu"></i></button>-->
 
     <div class="row">
       <div class="column">
@@ -120,7 +128,7 @@
 
 <section id="novo-tempo">
   <div class="align-wrapper">
-    <button type="button" class="menu-open mobile-only"><i class="icon-menu"></i></button>
+<!--    <button type="button" class="menu-open mobile-only"><i class="icon-menu"></i></button>-->
 
     <div class="text">
       <h2 class="proxima-nova-th">UM NOVO TEMPO PARA O MPU</h2>
@@ -133,7 +141,8 @@
           <div class="card-inner">
             <div class="card-front">
               <img src="assets/img/depoimento-joao.9cc732b7.jpg" />
-              <button type="button" class="reverse"><i class="icon-reverse"></i></button>
+              <button type="button" class="play open-modal" data-video="https://www.youtube.com/embed/TIBEDlqjs00?si=92Ry4xbA9_YXXMIr"><i class="icon-play"></i></button>
+              <button type="button" class="reverse"><span>Informações</span> <i class="icon-reverse"></i></button>
             </div>
 
             <div class="card-back">
@@ -150,7 +159,12 @@
 
               <div class="info">
                 <p class="proxima-nova-md">Membro do MPF desde 198  4, João Batista foi o primeiro procurador da República a exercer o cargo de secretário-geral do MPU. Durante a sua gestão, foi realizado o primeiro concurso público de servidores do Ministério Público da União.</p>
+              </div>
+
+              <div class="actions">
                 <button type="button" class="open-modal bt-video proxima-nova-md" data-video="https://www.youtube.com/embed/TIBEDlqjs00?si=92Ry4xbA9_YXXMIr">Assistir ao vídeo</button>
+                <div class="spacer"></div>
+                <button type="button" class="reverse"><span>Voltar</span></span><i class="icon-reverse"></i></button>
               </div>
             </div>
           </div>
@@ -161,7 +175,8 @@
           <div class="card-inner">
             <div class="card-front">
               <img src="assets/img/depoimento-eliana.52924fee.jpg" />
-              <button type="button" class="reverse"><i class="icon-reverse"></i></button>
+              <button type="button" class="play open-modal" data-video="https://www.youtube.com/embed/EHmpmvDG8a4?si=6D0Z9Z0KaFlR7BHF"><i class="icon-play"></i></button>
+              <button type="button" class="reverse"><span>Informações</span> <i class="icon-reverse"></i></button>
             </div>
 
             <div class="card-back">
@@ -178,8 +193,12 @@
 
               <div class="info">
                 <p class="proxima-nova-md">Eliana Torelly é subprocuradora-geral da República e coordenadora da 6ª Câmara de Coordenação e Revisão. Sua carreira no MPF começou em 1993.</p>
+              </div>
 
+              <div class="actions">
                 <button type="button" class="open-modal bt-video proxima-nova-md" data-video="https://www.youtube.com/embed/EHmpmvDG8a4?si=6D0Z9Z0KaFlR7BHF">Assistir ao vídeo</button>
+                <div class="spacer"></div>
+                <button type="button" class="reverse"><span>Voltar</span></span><i class="icon-reverse"></i></button>
               </div>
             </div>
           </div>
@@ -201,7 +220,7 @@
 
 <section id="linha-do-tempo">
   <div class="align-wrapper">
-    <button type="button" class="menu-open mobile-only"><i class="icon-menu"></i></button>
+<!--    <button type="button" class="menu-open mobile-only"><i class="icon-menu"></i></button>-->
 
     <div class="cabecalho">
       <div class="text">
@@ -324,7 +343,7 @@
 
 <section id="depoimentos">
   <div class="align-wrapper">
-    <button type="button" class="menu-open mobile-only"><i class="icon-menu"></i></button>
+<!--    <button type="button" class="menu-open mobile-only"><i class="icon-menu"></i></button>-->
 
     <div class="text">
       <h2>DO PASSADO AO FUTURO</h2>
@@ -337,7 +356,8 @@
           <div class="card-inner">
             <div class="card-front">
               <img src="assets/img/thumb-cila.558baa2f.jpg" />
-              <button type="button" class="reverse"><i class="icon-reverse"></i></button>
+              <button type="button" class="play open-modal" data-video="https://www.youtube.com/embed/kU_buyRunRY?si=vig1QWJWpyOTDZ3A"><i class="icon-play"></i></button>
+              <button type="button" class="reverse"><span>Informações</span> <i class="icon-reverse"></i></button>
             </div>
 
             <div class="card-back">
@@ -351,7 +371,12 @@
                   <img src="assets/img/depoimento-cila.558baa2f.jpg" />
                 </div>
               </div>
-              <button type="button" class="open-modal bt-video proxima-nova-md" data-video="https://www.youtube.com/embed/EHmpmvDG8a4?si=6D0Z9Z0KaFlR7BHF">Assistir ao vídeo</button>
+
+              <div class="actions">
+                <button type="button" class="open-modal bt-video proxima-nova-md" data-video="https://www.youtube.com/embed/kU_buyRunRY?si=vig1QWJWpyOTDZ3A">Assistir ao vídeo</button>
+                <div class="spacer"></div>
+                <button type="button" class="reverse"><span>Voltar</span><i class="icon-reverse"></i></button>
+              </div>
             </div>
           </div>
         </div>
@@ -362,7 +387,8 @@
           <div class="card-inner">
             <div class="card-front">
               <img src="assets/img/thumb-luciane.4c3c8464.jpg" />
-              <button type="button" class="reverse"><i class="icon-reverse"></i></button>
+              <button type="button" class="play open-modal" data-video="https://www.youtube.com/embed/3lu5fbY3T0A?si=cooJ-Sv732EtJkyR"><i class="icon-play"></i></button>
+              <button type="button" class="reverse"><span>Informações</span> <i class="icon-reverse"></i></button>
             </div>
 
             <div class="card-back">
@@ -376,7 +402,12 @@
                   <img src="assets/img/depoimento-luciane.4c3c8464.jpg" />
                 </div>
               </div>
-              <button type="button" class="open-modal bt-video proxima-nova-md" data-video="https://www.youtube.com/embed/3lu5fbY3T0A?si=cooJ-Sv732EtJkyR">Assistir ao vídeo</button>
+
+              <div class="actions">
+                <button type="button" class="open-modal bt-video proxima-nova-md" data-video="https://www.youtube.com/embed/3lu5fbY3T0A?si=cooJ-Sv732EtJkyR">Assistir ao vídeo</button>
+                <div class="spacer"></div>
+                <button type="button" class="reverse"><span>Voltar</span><i class="icon-reverse"></i></button>
+              </div>
             </div>
           </div>
         </div>
@@ -387,7 +418,8 @@
           <div class="card-inner">
             <div class="card-front">
               <img src="assets/img/thumb-marcia.702f472a.jpg" />
-              <button type="button" class="reverse"><i class="icon-reverse"></i></button>
+              <button type="button" class="play open-modal" data-video="https://www.youtube.com/embed/modYDObSm7E?si=cHa2MD3qnBLho0Am"><i class="icon-play"></i></button>
+              <button type="button" class="reverse"><span>Informações</span> <i class="icon-reverse"></i></button>
             </div>
 
             <div class="card-back">
@@ -401,7 +433,12 @@
                   <img src="assets/img/depoimento-marcia.702f472a.jpg" />
                 </div>
               </div>
-              <button type="button" class="open-modal bt-video proxima-nova-md" data-video="https://www.youtube.com/embed/modYDObSm7E?si=cHa2MD3qnBLho0Am">Assistir ao vídeo</button>
+
+              <div class="actions">
+                <button type="button" class="open-modal bt-video proxima-nova-md" data-video="https://www.youtube.com/embed/modYDObSm7E?si=cHa2MD3qnBLho0Am">Assistir ao vídeo</button>
+                <div class="spacer"></div>
+                <button type="button" class="reverse"><span>Voltar</span><i class="icon-reverse"></i></button>
+              </div>
             </div>
           </div>
         </div>
@@ -412,7 +449,8 @@
           <div class="card-inner">
             <div class="card-front">
               <img src="assets/img/thumb-mario.74bfad57.jpg" />
-              <button type="button" class="reverse"><i class="icon-reverse"></i></button>
+              <button type="button" class="play open-modal" data-video="https://www.youtube.com/embed/su3DWlFnsiE?si=UZjg4YVXBEIdazxS"><i class="icon-play"></i></button>
+              <button type="button" class="reverse"><span>Informações</span> <i class="icon-reverse"></i></button>
             </div>
 
             <div class="card-back">
@@ -426,7 +464,12 @@
                   <img src="assets/img/depoimento-mario.74bfad57.jpg" />
                 </div>
               </div>
-              <button type="button" class="open-modal bt-video proxima-nova-md" data-video="https://www.youtube.com/embed/su3DWlFnsiE?si=UZjg4YVXBEIdazxS">Assistir ao vídeo</button>
+
+              <div class="actions">
+                <button type="button" class="open-modal bt-video proxima-nova-md" data-video="https://www.youtube.com/embed/su3DWlFnsiE?si=UZjg4YVXBEIdazxS">Assistir ao vídeo</button>
+                <div class="spacer"></div>
+                <button type="button" class="reverse"><span>Voltar</span><i class="icon-reverse"></i></button>
+              </div>
             </div>
           </div>
         </div>
@@ -437,7 +480,8 @@
           <div class="card-inner">
             <div class="card-front">
               <img src="assets/img/thumb-patricia.d54a4d64.jpg" />
-              <button type="button" class="reverse"><i class="icon-reverse"></i></button>
+              <button type="button" class="play open-modal" data-video="https://www.youtube.com/embed/5WOM8KhquVE?si=am_Lb4LvQWrltHda"><i class="icon-play"></i></button>
+              <button type="button" class="reverse"><span>Informações</span> <i class="icon-reverse"></i></button>
             </div>
 
             <div class="card-back">
@@ -451,7 +495,12 @@
                   <img src="assets/img/depoimento-patricia.d54a4d64.jpg" />
                 </div>
               </div>
-              <button type="button" class="open-modal bt-video proxima-nova-md" data-video="https://www.youtube.com/embed/5WOM8KhquVE?si=am_Lb4LvQWrltHda">Assistir ao vídeo</button>
+
+              <div class="actions">
+                <button type="button" class="open-modal bt-video proxima-nova-md" data-video="https://www.youtube.com/embed/5WOM8KhquVE?si=am_Lb4LvQWrltHda">Assistir ao vídeo</button>
+                <div class="spacer"></div>
+                <button type="button" class="reverse"><span>Voltar</span><i class="icon-reverse"></i></button>
+              </div>
             </div>
           </div>
         </div>
@@ -462,7 +511,8 @@
           <div class="card-inner">
             <div class="card-front">
               <img src="assets/img/thumb-cristina.16633982.jpg" />
-              <button type="button" class="reverse"><i class="icon-reverse"></i></button>
+              <button type="button" class="play open-modal" data-video="https://www.youtube.com/embed/xxqc9nts6wg?si=hnDhSU9x1__0NHpQ"><i class="icon-play"></i></button>
+              <button type="button" class="reverse"><span>Informações</span> <i class="icon-reverse"></i></button>
             </div>
 
             <div class="card-back">
@@ -476,7 +526,12 @@
                   <img src="assets/img/depoimento-cristina.16633982.jpg" />
                 </div>
               </div>
-              <button type="button" class="open-modal bt-video proxima-nova-md" data-video="https://www.youtube.com/embed/xxqc9nts6wg?si=hnDhSU9x1__0NHpQ">Assistir ao vídeo</button>
+
+              <div class="actions">
+                <button type="button" class="open-modal bt-video proxima-nova-md" data-video="https://www.youtube.com/embed/xxqc9nts6wg?si=hnDhSU9x1__0NHpQ">Assistir ao vídeo</button>
+                <div class="spacer"></div>
+                <button type="button" class="reverse"><span>Voltar</span><i class="icon-reverse"></i></button>
+              </div>
             </div>
           </div>
         </div>
@@ -487,7 +542,8 @@
           <div class="card-inner">
             <div class="card-front">
               <img src="assets/img/thumb-felipe.750e682a.jpg" />
-              <button type="button" class="reverse"><i class="icon-reverse"></i></button>
+              <button type="button" class="play open-modal" data-video="https://www.youtube.com/embed/It7uA9KRctM?si=rV2yC8f_704E1MJO"><i class="icon-play"></i></button>
+              <button type="button" class="reverse"><span>Informações</span> <i class="icon-reverse"></i></button>
             </div>
 
             <div class="card-back">
@@ -501,7 +557,12 @@
                   <img src="assets/img/depoimento-felipe.750e682a.jpg" />
                 </div>
               </div>
-              <button type="button" class="open-modal bt-video proxima-nova-md" data-video="https://www.youtube.com/embed/It7uA9KRctM?si=rV2yC8f_704E1MJO">Assistir ao vídeo</button>
+
+              <div class="actions">
+                <button type="button" class="open-modal bt-video proxima-nova-md" data-video="https://www.youtube.com/embed/It7uA9KRctM?si=rV2yC8f_704E1MJO">Assistir ao vídeo</button>
+                <div class="spacer"></div>
+                <button type="button" class="reverse"><span>Voltar</span><i class="icon-reverse"></i></button>
+              </div>
             </div>
           </div>
         </div>
@@ -512,7 +573,8 @@
           <div class="card-inner">
             <div class="card-front">
               <img src="assets/img/thumb-maria-g.3b85c70f.jpg" />
-              <button type="button" class="reverse"><i class="icon-reverse"></i></button>
+              <button type="button" class="play open-modal" data-video="https://www.youtube.com/embed/8lwm6b2LxTo?si=pRWOS8SFw1Dr1AFo"><i class="icon-play"></i></button>
+              <button type="button" class="reverse"><span>Informações</span> <i class="icon-reverse"></i></button>
             </div>
 
             <div class="card-back">
@@ -526,7 +588,12 @@
                   <img src="assets/img/depoimento-maria-g.3b85c70f.jpg" />
                 </div>
               </div>
-              <button type="button" class="open-modal bt-video proxima-nova-md" data-video="https://www.youtube.com/embed/8lwm6b2LxTo?si=pRWOS8SFw1Dr1AFo">Assistir ao vídeo</button>
+
+              <div class="actions">
+                <button type="button" class="open-modal bt-video proxima-nova-md" data-video="https://www.youtube.com/embed/8lwm6b2LxTo?si=pRWOS8SFw1Dr1AFo">Assistir ao vídeo</button>
+                <div class="spacer"></div>
+                <button type="button" class="reverse"><span>Voltar</span><i class="icon-reverse"></i></button>
+              </div>
             </div>
           </div>
         </div>
@@ -537,7 +604,8 @@
           <div class="card-inner">
             <div class="card-front">
               <img src="assets/img/thumb-flavio.66d39553.jpg" />
-              <button type="button" class="reverse"><i class="icon-reverse"></i></button>
+              <button type="button" class="play open-modal" data-video="https://www.youtube.com/embed/dGnZgTAwCoc?si=C52RhVLiuOtejjZJ"><i class="icon-play"></i></button>
+              <button type="button" class="reverse"><span>Informações</span> <i class="icon-reverse"></i></button>
             </div>
 
             <div class="card-back">
@@ -551,7 +619,12 @@
                   <img src="assets/img/depoimento-flavio.66d39553.jpg" />
                 </div>
               </div>
-              <button type="button" class="open-modal bt-video proxima-nova-md" data-video="https://www.youtube.com/embed/dGnZgTAwCoc?si=C52RhVLiuOtejjZJ">Assistir ao vídeo</button>
+
+              <div class="actions">
+                <button type="button" class="open-modal bt-video proxima-nova-md" data-video="https://www.youtube.com/embed/dGnZgTAwCoc?si=C52RhVLiuOtejjZJ">Assistir ao vídeo</button>
+                <div class="spacer"></div>
+                <button type="button" class="reverse"><span>Voltar</span><i class="icon-reverse"></i></button>
+              </div>
             </div>
           </div>
         </div>
@@ -562,7 +635,8 @@
           <div class="card-inner">
             <div class="card-front">
               <img src="assets/img/thumb-eduardo.a77e2e0a.jpg" />
-              <button type="button" class="reverse"><i class="icon-reverse"></i></button>
+              <button type="button" class="play open-modal" data-video="https://www.youtube.com/embed/w4X1Vtk_xhE?si=Z2sjGg3cdEBUi51-"><i class="icon-play"></i></button>
+              <button type="button" class="reverse"><span>Informações</span> <i class="icon-reverse"></i></button>
             </div>
 
             <div class="card-back">
@@ -576,7 +650,12 @@
                   <img src="assets/img/depoimento-eduardo.a77e2e0a.jpg" />
                 </div>
               </div>
-              <button type="button" class="open-modal bt-video proxima-nova-md" data-video="https://www.youtube.com/embed/w4X1Vtk_xhE?si=Z2sjGg3cdEBUi51-">Assistir ao vídeo</button>
+
+              <div class="actions">
+                <button type="button" class="open-modal bt-video proxima-nova-md" data-video="https://www.youtube.com/embed/w4X1Vtk_xhE?si=Z2sjGg3cdEBUi51-">Assistir ao vídeo</button>
+                <div class="spacer"></div>
+                <button type="button" class="reverse"><span>Voltar</span><i class="icon-reverse"></i></button>
+              </div>
             </div>
           </div>
         </div>
@@ -587,7 +666,7 @@
 
 <section id="dados-do-concurso">
   <div class="align-wrapper">
-    <button type="button" class="menu-open mobile-only"><i class="icon-menu"></i></button>
+<!--    <button type="button" class="menu-open mobile-only"><i class="icon-menu"></i></button>-->
 
     <div class="owl-carousel owl-theme">
       <div class="item">
@@ -1211,7 +1290,7 @@
 
 <section id="questoes-da-prova">
   <div class="align-wrapper">
-    <button type="button" class="menu-open mobile-only"><i class="icon-menu"></i></button>
+<!--    <button type="button" class="menu-open mobile-only"><i class="icon-menu"></i></button>-->
 
     <div class="text">
       <h2 class="proxima-nova-th">QUESTÕES DA PROVA</h2>
@@ -1224,13 +1303,13 @@
         <div id="options"></div>
       </div>
 
-      <div class="actions">
+      <div id="questions-options" class="actions">
         <div>
           <button id="back-button" class="hidden outline">voltar</button>
         </div>
 
         <div>
-          <span id="devolutiva">Lorem ipsum dolor sit amet, consectetuer adipiscing elit,<br/> sed diam nonummy nibh euismod consectetuer</span>
+          <span id="devolutiva">Resposta do gabarito oficial do concurso em 1992.</span>
         </div>
 
         <div>
@@ -1348,7 +1427,7 @@
   <!-- block for specific page scripts -->
   
 <!-- load specific page script -->
-<script src="assets/js/home.c2692587.js"></script>
+<script src="assets/js/home.4cd9d423.js"></script>
 
 </body>
 </html>

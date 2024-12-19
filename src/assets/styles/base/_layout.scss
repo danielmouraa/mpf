@@ -70,6 +70,22 @@ body {
   }
 }
 
+#menu-mobile {
+  position: sticky;
+  top: 0;
+  background: #f5f5f5;
+  z-index: 9999;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.5), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+  .align-wrapper {
+    padding: 15px clamp(30px, 3.91%, 50px);
+
+    button {
+      margin: 0 !important;
+    }
+  }
+}
+
 .mobile-only {
   display: none !important;
 
