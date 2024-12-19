@@ -433,11 +433,19 @@ footer {
       transform: scale(1.2);
     }
 
+    body.contraste & {
+      border-color: $contraste-font-color !important;
+    }
+
     .owl-dot {
 
       &.active {
         span {
           background: #333333;
+
+          body.contraste & {
+            background: $contraste-font-color !important;
+          }
         }
       }
 
@@ -451,6 +459,10 @@ footer {
       span {
         transition: all ease-in-out .2s;
         background: #999999;
+
+        body.contraste & {
+          background: #999999 !important;
+        }
       }
     }
   }

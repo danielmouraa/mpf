@@ -259,6 +259,9 @@ $(document).ready(function() {
         loadQuestion();
         restartButton.classList.add("hidden");
         nextButton.classList.add("hidden");
+        $('html, body').animate({
+          scrollTop: ($('.quiz-container').offset().top - 80)
+        }, 0);
       });
 
       nextButton.classList.add("hidden");
@@ -284,13 +287,42 @@ $(document).ready(function() {
       score++; // Increment score if the answer is correct
     }
 
+    // scroll($('.quiz-container .correct'));
+
     nextButton.classList.remove("hidden");
+  }
+
+  var scroll = function(element) {
+
+    if (window.innerWidth < 1280) {
+      $('html, body').animate({
+        scrollTop: $('.quiz-container').offset().top - 80 // Adjust for the menu
+      }, 0);
+    }
+    // var $element = !element ? $('.quiz-container') : element;
+    // console.log($element)
+    // var elementTop = $element.offset().top;
+    // var elementBottom = elementTop + $element.outerHeight();
+    // var windowTop = $(window).scrollTop();
+    // var windowBottom = windowTop + $(window).height();
+    //
+    // // Check if element is fully within the view with an additional 80px for the menu
+    // if (elementTop < windowBottom && elementBottom > windowTop ) {
+    //   // If element is in view or only slightly out, do nothing
+    // } else {
+    //   // Scroll to the element with 80px offset
+    //   $('html, body').animate({
+    //     scrollTop: elementTop - 80 // Adjust for the menu
+    //   }, 0);
+    // }
   }
 
   // Event listeners for buttons
   nextButton.addEventListener("click", () => {
     currentQuestion++;
     loadQuestion();
+
+    scroll($('.quiz-container'));
 
     if (currentQuestion > 0 && currentQuestion < questions.length) {
       backButton.classList.remove("hidden");
@@ -301,6 +333,9 @@ $(document).ready(function() {
   backButton.addEventListener("click", () => {
     currentQuestion--;
     loadQuestion();
+
+    scroll($('.quiz-container'));
+
     if (currentQuestion === 0) {
       backButton.classList.add("hidden");
     }
@@ -358,6 +393,9 @@ $(document).ready(function() {
 
   $('#grafico-vagas .labels li').on('click mouseenter', function() {
     var delay = 0;
+
+    $('#grafico-vagas .labels li').removeClass('active');
+    $(this).addClass('active');
 
     clearTimeout(mouseEnterTimeout); // Clear any existing timer
     mouseEnterTimeout = setTimeout(() => {

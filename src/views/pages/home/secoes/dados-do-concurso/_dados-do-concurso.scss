@@ -213,7 +213,8 @@ $cor-por-ramo: #73ade0;
               transform: translateY(-50%);
             }
 
-            &:hover {
+            &:hover,
+            &.active {
               &[data-categoria="inscritos"]:before {
                 background: $cor-inscritos;
               }
@@ -249,7 +250,9 @@ $cor-por-ramo: #73ade0;
           padding: 0;
 
           @include mobile-tablet {
-            grid-template-columns: 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px;
+            width: 100%;
+            grid-template-columns: 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px 20px;
+            justify-content: center;
           }
 
           i:before {
