@@ -30,10 +30,6 @@ $(document).ready(function() {
     });
   }
 
-  $('#menu a').on('click', function() {
-    $('#menu').removeClass('active');
-  });
-
   $('#timeline-concursos .timeline li').on('click mouseenter', function() {
     clearTimeout(mouseEnterTimeout); // Clear any existing timer
     mouseEnterTimeout = setTimeout(() => {
@@ -623,6 +619,11 @@ $(document).ready(function() {
   });
 
   $('#menu-close').on('click', function() {
+    $('#menu').removeClass('active');
+    $('body').css('overflow', 'auto');
+  });
+
+  $('#menu a').on('click', function() {
     $('#menu').removeClass('active');
     $('body').css('overflow', 'auto');
   });
