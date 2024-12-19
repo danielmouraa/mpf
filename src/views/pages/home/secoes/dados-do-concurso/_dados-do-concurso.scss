@@ -192,7 +192,7 @@ $cor-por-ramo: #73ade0;
             position: relative;
             margin-bottom: 15px;
             font-size: 1.4rem;
-            color: #434244;
+            color: #bcbbbb;
             font-weight: bold;
             cursor: pointer;
 
@@ -205,16 +205,18 @@ $cor-por-ramo: #73ade0;
               content: "";
               width: 15px;
               height: 15px;
-              background: #434244;
+              background: #bcbbbb;
               border-radius: 50%;
               position: absolute;
               left: 0;
               top: 50%;
               transform: translateY(-50%);
+
             }
 
             &:hover,
             &.active {
+              color: #434244;
               &[data-categoria="inscritos"]:before {
                 background: $cor-inscritos;
               }
@@ -385,6 +387,10 @@ $cor-por-ramo: #73ade0;
         @include mobile-tablet {
           gap: 15px;
           flex-direction: column;
+        }
+
+        & > .mapa {
+          width: 100%;
         }
 
         .info {
@@ -882,19 +888,34 @@ $cor-por-ramo: #73ade0;
     z-index: 1;
     float: left;
     padding: 20px 0 0 15px;
+
+    @include mobile-tablet {
+      padding: 0;
+      width: 100%;
+      height: 235px;
+    }
   }
 
   #map {
+
     display: none;
-    transform: scale(1.2);
-    transform: scale(1);
+    //transform: scale(1.2);
+    //transform: scale(1);
     display: table !important;
     margin: 0 auto;
     float: left;
 
+    & > g {
+      @include mobile-tablet {
+        transform: scale(.5) !important;
+      }
+    }
+
     @include mobile-tablet {
       float: none;
-      transform: scale(.5) !important;
+      transform: scale(1, 1);
+      width: fit-content;
+      height: 100%;
     }
   }
   #map .state {

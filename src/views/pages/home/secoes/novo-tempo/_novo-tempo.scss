@@ -41,6 +41,21 @@
       @include mobile-tablet {
         width: 100%;
       }
+
+      .card {
+        .membro {
+          @include mobile-tablet {
+            flex-direction: column;
+          }
+
+          .avatar {
+            @include mobile-tablet {
+              max-width: none;
+              width: 100%;
+            }
+          }
+        }
+      }
     }
   }
 

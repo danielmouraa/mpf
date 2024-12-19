@@ -196,6 +196,10 @@ html {
     gap: 15px;
 
     .spacer {
+      @media (max-width: 480px) {
+        display: none;
+      }
+
       flex: 1;
     }
 
@@ -313,7 +317,7 @@ button {
   }
 
   @include mobile-tablet {
-    padding: 25px;
+    padding: 0;
   }
 }
 
@@ -328,9 +332,14 @@ button {
   position: relative;
 
   @include mobile-tablet {
-    width: 100%;
     marign: 0;
+    width: calc(100% - 30px);
+    margin: 0 auto;
+  }
 
+  body.contraste & {
+    background: $contraste-background-color;
+    border-color: $contraste-font-color;
   }
 }
 

@@ -133,7 +133,7 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    height: 100%;
+    height: calc(100% + 300px);
     width: 75%;
     transform: translateX(-100%);
   }
