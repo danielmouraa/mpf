@@ -619,10 +619,12 @@ $(document).ready(function() {
 
   $('.menu-open').on('click', function() {
     $('#menu').addClass('active');
+    $('body').css('overflow', 'hidden');
   });
 
   $('#menu-close').on('click', function() {
     $('#menu').removeClass('active');
+    $('body').css('overflow', 'auto');
   });
   // ==================================== FIM MENU =================================== //
 });
