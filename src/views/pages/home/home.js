@@ -353,7 +353,7 @@ $(document).ready(function() {
   var iframe = $('#iframe');
 
   function openModal(url) {
-    iframe.attr('src', url);
+    iframe.attr('src', url + '?origin=https://memorial.mpf.mp.br');
     modal.show();
     $('body').css('overflow', 'hidden');
   }

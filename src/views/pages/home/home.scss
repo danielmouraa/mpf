@@ -316,6 +316,20 @@ button {
     height: 100%;
   }
 
+  .close {
+    margin: 15px;
+    align-self: flex-end;
+    width: 100%;
+    text-align: right;
+    display: block;
+    width: fit-content;
+
+    i:before {
+      color: #FFF;
+    }
+  }
+
+
   @include mobile-tablet {
     padding: 0;
   }
@@ -343,16 +357,6 @@ button {
   }
 }
 
-.close {
-  position: absolute;
-  right: 0;
-  top: -10px;
-  transform: translateY(-100%) translateX(0);
-
-  i:before {
-    color: #FFF;
-  }
-}
 
 .close:hover,
 .close:focus {
