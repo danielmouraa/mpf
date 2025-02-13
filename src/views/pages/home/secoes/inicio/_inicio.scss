@@ -14,7 +14,7 @@
   }
 
 
-  &:hover #custom-controls {
+  &:hover #custom-controls button[type=button]  {
     opacity: 1;
   }
 
@@ -57,20 +57,26 @@
   #custom-controls {
     display: flex;
     align-items: center;
-    background: rgba(0, 0, 0, .8);
     color: white;
     position: absolute;
     bottom: 0;
     width: 100%;
     justify-content: center;
-    padding: 10px;
-    opacity: 0;
-    transition: all ease-in-out .2s;
     cursor: auto;
+    padding: 0 10px 10px 10px;
+
+    button[type=button] {
+      font-size: 0;
+      padding: 10px;
+      background: rgba(0, 0, 0, .8);
+      opacity: 0;
+      transition: all ease-in-out .2s;
+      cursor: pointer;
+    }
 
     i:before {
       color: #FFF;
-      font-size: 3.5rem;
+      font-size: 1.6rem;
     }
 
     .spacer {

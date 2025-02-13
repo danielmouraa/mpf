@@ -4,6 +4,7 @@ const webpack = require('webpack'); // Import webpack for ProvidePlugin
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const isProd = !process.argv.find((str) => str.includes('development'));
+const baseUrl = './';
 
 module.exports = {
   mode: isProd ? 'production' : 'development',
@@ -13,6 +14,8 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     clean: true,
+    // publicPath: isProd ? baseUrl : '/',
+    publicPath: isProd ? baseUrl : '',
   },
 
   resolve: {
@@ -50,16 +53,16 @@ module.exports = {
         404: './src/views/pages/404/index.html', // => dist/404.html
       },
 
+
       js: {
-        // output filename of compiled JavaScript, used if `inline` option is false (defaults)
         filename: 'assets/js/[name].[contenthash:8].js',
-        // inline: true; // inlines JS into HTML
+        publicPath: isProd ? baseUrl : '/',
       },
 
+
       css: {
-        // output filename of extracted CSS, used if `inline` option is false (defaults)
         filename: 'assets/css/[name].[contenthash:8].css',
-        // inline: true; // inlines CSS into HTML
+        publicPath: isProd ? baseUrl : '/',
       },
 
       // supports template engines: eta, ejs, handlebars, nunjucks, twig
@@ -91,8 +94,8 @@ module.exports = {
             const srcPath = 'src/assets/fonts';
             const regExp = new RegExp(`[\\\\/]?(?:${path.normalize(srcPath)}|node_modules)[\\\\/](.+?)$`);
             const assetPath = path.dirname(regExp.exec(filename)[1].replace('@', '').replace(/\\/g, '/'));
-
-            return `assets/fonts/${assetPath}/[name][ext][query]`;
+            const basePath = isProd ? baseUrl : '/';
+            return `${basePath}assets/fonts/${assetPath}/[name][ext][query]`;
           },
         },
       },
@@ -115,7 +118,10 @@ module.exports = {
               },
             },
             generator: {
-              filename: 'assets/img/[name].[hash:8][ext]',
+              filename: (pathData) => {
+                const basePath = isProd ? baseUrl : '/';
+                return `${basePath}assets/img/[name].[hash:8][ext]`;
+              },
             },
           },
         ],

@@ -349,8 +349,20 @@ $(document).ready(function() {
   // ==================================== MODAL =================================== //
 
   var modal = $('#myModal');
-  var span = $('.close');
+  var close = $('.close');
   var iframe = $('#iframe');
+
+  $(document).keydown(function(event) {
+    if (event.key === "Escape" || event.keyCode === 27) {
+      closeModal();
+    }
+  });
+
+  const closeModal = function(){
+    modal.hide();
+    iframe.attr('src', '');
+    $('body').css('overflow', 'auto');
+  }
 
   function openModal(url) {
     iframe.attr('src', url + '?origin=https://memorial.mpf.mp.br');
@@ -368,10 +380,8 @@ $(document).ready(function() {
     e.preventDefault();
   });
 
-  span.click(function() {
-    modal.hide();
-    iframe.attr('src', '');
-    $('body').css('overflow', 'auto');
+  close.click(function() {
+    closeModal();
   });
 
   $(window).click(function(event) {
@@ -462,97 +472,101 @@ $(document).ready(function() {
             const player = event.target;
             player.mute(); // Mute for autoplay compatibility
             player.playVideo(); // Auto-start the video
-
+            player.setOption('playerVars', { controls: 0 });
             setupCustomControls(player);
           },
           onStateChange: onPlayerStateChange,
         },
       });
-
     });
   }
 
 
-
-  // Setup custom controls (play, pause, seek bar, etc.)
+// Setup custom controls (play, pause, fullscreen, etc.)
   function setupCustomControls(player) {
     const playButton = document.getElementById('play-button');
     const pauseButton = document.getElementById('pause-button');
-    const fullscreen = document.getElementById('fullscreen-button');
+    const fullscreenButton = document.getElementById('fullscreen-button');
+    const videoContainer = document.getElementById('custom-video-container');
+    const iframe = document.getElementById('youtube-player');
+    let clickTimeout;
 
-    $('#custom-video-container').on('click', () => {
-      const playerState = player.getPlayerState();
+    const requestFullScreen = () => {
+      if (!iframe) return;
 
-      if (playerState === YT.PlayerState.PLAYING) {
-        player.pauseVideo();
-      }
+      // Enable controls when entering fullscreen
+      player.setOption('playerVars', { controls: 1 });
 
-      if (playerState === YT.PlayerState.PAUSED) {
-        player.playVideo();
-      }
-    });
+      const fullscreenMethods = [
+        'requestFullscreen', 'mozRequestFullScreen', 'webkitRequestFullscreen', 'msRequestFullscreen'
+      ];
+      fullscreenMethods.some(method => iframe[method]?.());
+    };
 
-    // Play video
-    playButton.addEventListener('click', () => {
-      player.playVideo();
-    });
-
-    // Pause video
-    pauseButton.addEventListener('click', () => {
-      player.pauseVideo();
-    });
-
-    // Fullscreen video
-    fullscreen.addEventListener('click', () => {
-      const iframe = document.getElementById('youtube-player');
-
-      if (iframe.requestFullscreen) {
-        iframe.requestFullscreen();
-      } else if (iframe.mozRequestFullScreen) { // Firefox
-        iframe.mozRequestFullScreen();
-      } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, Opera
-        iframe.webkitRequestFullscreen();
-      } else if (iframe.msRequestFullscreen) { // IE/Edge
-        iframe.msRequestFullscreen();
-      }
-    });
-
-    // EXIT FULLSCREEN
-
-    const enterFullscreen = function() {
+    const enterFullscreen = () => {
       document.body.classList.add('fullscreen');
       player.unMute();
-    }
+    };
 
-    const exitFullscreen = function() {
+    const exitFullscreen = () => {
       player.mute();
       document.body.classList.remove('fullscreen');
-    }
 
-    document.addEventListener('fullscreenchange', () => {
-      if (document.fullscreenElement) {
-        enterFullscreen();
+      // Disable controls when exiting fullscreen
+      player.setOption('playerVars', { controls: 0 });
+
+      const fullscreenElement = [
+        document.fullscreenElement,
+        document.webkitFullscreenElement,
+        document.mozFullScreenElement,
+        document.msFullscreenElement
+      ].find(el => el);
+
+      if (fullscreenElement === iframe) {
+        const exitMethods = [
+          'exitFullscreen', 'mozCancelFullScreen', 'webkitExitFullscreen', 'msExitFullscreen'
+        ];
+        exitMethods.some(method => document[method]?.());
+      }
+    };
+
+    const handleFullscreenChange = () => {
+      const fullscreenElement = [
+        document.fullscreenElement,
+        document.webkitFullscreenElement,
+        document.mozFullScreenElement,
+        document.msFullscreenElement
+      ].find(el => el);
+
+      fullscreenElement === iframe ? enterFullscreen() : exitFullscreen();
+    };
+
+    document.addEventListener('fullscreenchange', handleFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+    document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+    document.addEventListener('msfullscreenchange', handleFullscreenChange);
+
+    videoContainer.addEventListener('dblclick', requestFullScreen);
+    videoContainer.addEventListener('click', () => {
+      if (clickTimeout) {
+        clearTimeout(clickTimeout);
+        requestFullScreen();
+        clickTimeout = null;
       } else {
-        exitFullscreen();
+        clickTimeout = setTimeout(() => {
+          const playerState = player.getPlayerState();
+          playerState === YT.PlayerState.PLAYING ? player.pauseVideo() : player.playVideo();
+          clickTimeout = null;
+        }, 300);
       }
     });
 
-    // Add vendor-prefixed events for better compatibility
-    document.addEventListener('mozfullscreenchange', () => {
-      document.fullscreenElement ?
-        enterFullscreen() : exitFullscreen();
-    });
-
-    document.addEventListener('webkitfullscreenchange', () => {
-      document.fullscreenElement ?
-        enterFullscreen() : exitFullscreen();
-    });
-
-    document.addEventListener('msfullscreenchange', () => {
-      document.fullscreenElement ?
-        enterFullscreen() : exitFullscreen();
-    });
+    playButton.addEventListener('click', () => player.playVideo());
+    pauseButton.addEventListener('click', () => player.pauseVideo());
+    fullscreenButton.addEventListener('click', requestFullScreen);
   }
+
+
 
   // Handle player state changes (optional)
   function onPlayerStateChange(event) {

@@ -313,16 +313,21 @@ button {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: 100%;
     height: 100%;
   }
 
   .close {
-    margin: 15px;
     align-self: flex-end;
-    width: 100%;
+    margin: 0 auto 15px;
     text-align: right;
     display: block;
-    width: fit-content;
+    width: 60%;
+
+    @include mobile-tablet {
+      width: calc(100% - 30px);
+      margin-bottom: 15px;
+    }
 
     i:before {
       color: #FFF;
@@ -337,7 +342,7 @@ button {
 
 .modal-content {
   background-color: #fefefe;
-  margin: 5% auto;
+  margin: 0 auto;
   padding: 20px;
   border: 1px solid #888;
   width: 60%;

@@ -31,6 +31,13 @@ body {
       padding: 30px clamp(30px, 3.91%, 50px);
     }
   }
+
+  button:focus,
+  button:active {
+    outline: none !important;
+    box-shadow: none !important;
+    -webkit-tap-highlight-color: transparent; /* For iOS Safari */
+  }
 }
 
 #accessibility {
